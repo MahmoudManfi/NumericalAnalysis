@@ -96,10 +96,11 @@ def get_root(fun, x):
     fun = Func(fun)
     iter = 0
     last_value = inf
-    while iter < 50 and abs(x - last_value) > constants.EPS and abs(x) < 1000000000000000000:
+    while iter < 50 and abs(x - last_value) > constants.EPS and abs(x) < 100000000000000:
         iter += 1
         last_value = x
         x = round(fun.get_value_at(x), constants.DIGITS)
+        print(x)
     if abs(x - last_value) < constants.EPS:
         print(x)
         return x
@@ -107,4 +108,4 @@ def get_root(fun, x):
     return None
 
 
-tt = find_root_fixed_point("3+x*-5", .5)
+tt = find_root_fixed_point("sin(x)+exp(x)+x**2+8", .5)
