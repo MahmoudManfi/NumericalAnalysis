@@ -1,6 +1,6 @@
 from sympy import *
 from sympy.parsing.sympy_parser import *
-
+from Bracketing.parsing import parse
 
 class Function:
     def __init__(self, function):
@@ -8,8 +8,10 @@ class Function:
         """the function is assumed to be a function of x """
 
         transformation = standard_transformations + (implicit_application,)
-        self.f = parse_expr(function, transformations=transformation, )
-        print(self.f)
+        # self.f = parse_expr(function, transformations=transformation, )
+        self.f = parse(function)
+        for i in self.f:
+            print(i)
         self.__x = symbols('x')
 
     def get_value_at(self, x):
