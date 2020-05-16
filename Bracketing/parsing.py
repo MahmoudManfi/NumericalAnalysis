@@ -1,6 +1,9 @@
 def is_num(di):
-    return di >= '0' and di <= '9'
-def parse(str):
+    return '0' <= di <= '9'
+
+
+def parse(str ):
+
         terms = []
         signs = []
         n = len(str)
