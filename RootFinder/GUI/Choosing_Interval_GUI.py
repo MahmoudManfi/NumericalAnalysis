@@ -2,10 +2,9 @@ from tkinter import *
 
 
 
-
 class Interval(Frame):
-    def __init__(self,parent,*args, **kwargs):
-        Frame.__init__(self, parent, *args, **kwargs)
+    def __init__(self):
+        Frame.__init__(self)
 
         self.interval_list = []
 
@@ -18,7 +17,7 @@ class Interval(Frame):
         self.leftInterval = Entry(labelframe)
         self.leftInterval.pack(side='left')
 
-        entryframe = Frame(interval, padx=5, pady=5, bg='blue')
+        entryframe = Frame(self, padx=5, pady=5, bg='blue')
         entryframe.pack()
 
         to_label = Label(entryframe, text='To:', bg='blue')
@@ -26,7 +25,7 @@ class Interval(Frame):
 
         rightInterval = Entry(entryframe)
         rightInterval.pack(side='left')
-        button = Button(interval, text='Enter', command=self.sumbit_interval, bg='black', fg='orange')
+        button = Button(self, text='Enter', command=self.sumbit_interval, bg='black', fg='orange')
         button.pack()
 
 
@@ -47,7 +46,7 @@ class Interval(Frame):
             self.warn_error(interval)
             return
         interval.destroy()
-
+        print('dlgko')
         self.interval_list = [left,right]
         # print(interval_list[0],interval_list[1])
 

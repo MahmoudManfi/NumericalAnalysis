@@ -1,8 +1,9 @@
 from tkinter import *
 
 # Gui handler events
-from RootFinder.GUI import Choosing_Method_GUI as methods, Choosing_Interval_GUI
-
+from RootFinder.GUI import Choosing_Interval_GUI
+from RootFinder.GUI import Choosing_Method_GUI as methods
+from RootFinder.GUI.Plot import draw
 
 def solve_equation(function_string):
     print(function_string)
@@ -24,13 +25,9 @@ def custom_solve_handler():
 
 
 def draw_button_handler():
-    i = Choosing_Interval_GUI.
-    interval_list = Choosing_Interval_GUI()
-
-
-    print(interval_list[0])
-    # print(type(interval_list))
-    # Plot.draw(get_equation(),interval_list[0],interval_list[1])
+    i = Choosing_Interval_GUI.Interval()
+    interval_list = i.interval_list
+    draw(get_equation(),interval_list[0],interval_list[1])
     return None
 
 

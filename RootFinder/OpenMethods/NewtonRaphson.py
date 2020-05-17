@@ -1,4 +1,4 @@
-from idlelib.idle_test.mock_idle import Func
+from RootFinder.Utils.Function import Function as Func
 
 from RootFinder.Utils import constants
 
