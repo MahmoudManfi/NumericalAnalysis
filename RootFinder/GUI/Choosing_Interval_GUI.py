@@ -4,7 +4,7 @@ from tkinter import *
 
 class Interval(Frame):
     def __init__(self,parent):
-        Frame.__init__(self)
+        Frame.__init__(self,parent)
 
         self.interval_list = []
 
@@ -23,9 +23,9 @@ class Interval(Frame):
         to_label = Label(entryframe, text='To:', bg='blue')
         to_label.pack(side='left')
 
-        rightInterval = Entry(entryframe)
-        rightInterval.pack(side='left')
-        button = Button(parent, text='Enter', command=self.sumbit_interval, bg='black', fg='orange')
+        self.rightInterval = Entry(entryframe)
+        self.rightInterval.pack(side='left')
+        button = Button(parent, text='Enter', command=lambda: self.sumbit_interval(parent), bg='black', fg='orange')
         button.pack()
 
 

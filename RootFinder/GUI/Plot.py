@@ -17,22 +17,22 @@ def draw_from_lists(xs, ys):
     :return: plotting the function in a new window
     """
     # print('fewj')
-    # app = Tk()
-    #
-    # figure = Figure(figsize=(5, 5), dpi=100)
-    # figure.add_subplot(111).plot(xs,ys)
-    #
-    # canvas = FigureCanvasTkAgg(figure, master=app)
-    # canvas.draw()
-    # canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
-    # toolbar = NavigationToolbar2Tk(canvas, app)
-    # toolbar.update()
-    # canvas.get_tk_widget().pack(side=TOP, fill=BOTH, expand=1)
-    #
-    # app.mainloop()
+    app = Tk()
 
-    plt.plot(xs, ys)
-    plt.show()
+    figure = Figure(figsize=(5, 5), dpi=100)
+    figure.add_subplot(111).plot(xs,ys)
+
+    canvas = FigureCanvasTkAgg(figure, master=app)
+    canvas.draw()
+    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
+    toolbar = NavigationToolbar2Tk(canvas, app)
+    toolbar.update()
+    canvas.get_tk_widget().pack(side=TOP, fill=BOTH, expand=1)
+
+    app.mainloop()
+
+    # plt.plot(xs, ys)
+    # plt.show()
 
 
 def draw(function_string, left, right):
@@ -42,7 +42,6 @@ def draw(function_string, left, right):
     ys = list()
 
     while left < right:
-
         print(left)
         xs.append(left)
         ys.append(fun.get_value_at(left))
