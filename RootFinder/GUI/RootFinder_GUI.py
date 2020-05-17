@@ -25,7 +25,12 @@ def custom_solve_handler():
 
 
 def draw_button_handler():
-    i = Choosing_Interval_GUI.Interval()
+    interval = Tk()
+    interval.title('Input the Interval')
+    interval.configure(padx=4, pady=4, bg='blue')
+    i = Choosing_Interval_GUI.Interval(interval)
+    # .pack(side="top", fill="both", expand=True)
+    interval.mainloop()
     interval_list = i.interval_list
     draw(get_equation(),interval_list[0],interval_list[1])
     return None
