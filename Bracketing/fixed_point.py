@@ -1,8 +1,9 @@
 from cmath import inf, sqrt
 
 import Bracketing.constants as constants
-from Bracketing.Function import Function as Func
+from Bracketing.Function import Function as Func, Float
 import Bracketing.parsing as parse
+import Bracketing.eval_success as parse_success
 
 eps = constants.EPS
 max_iterations = constants.MAX_ITERATIONS
@@ -92,15 +93,17 @@ def find_root_fixed_point(function_string, x):
 
 
 def get_root(fun, x):
-    print(fun)
-    fun = Func(fun)
+    print("g(x) = "+fun)
+    #fun = Func(fun)
     iter = 0
     last_value = inf
-    while iter < 50 and abs(x - last_value) > constants.EPS and abs(x) < 100000000000000:
-        iter += 1
+
+    while iter < 50 and abs(x - last_value) > constants.EPS and abs(x) < 100000000000000 :
+        iter+=1
         last_value = x
-        x = round(fun.get_value_at(x), constants.DIGITS)
-        print(x)
+        x = parse_success.eval_success(fun,x)
+        if type(x)!=float and x.imag!=0.0:
+            return None
     if abs(x - last_value) < constants.EPS:
         print(x)
         return x
@@ -108,4 +111,4 @@ def get_root(fun, x):
     return None
 
 
-tt = find_root_fixed_point("sin(x)+exp(x)+x**2+8", .5)
+tt = find_root_fixed_point("x+x**2-8", 0.8)
