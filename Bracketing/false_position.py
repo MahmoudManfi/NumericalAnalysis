@@ -6,6 +6,7 @@ max_iterations = constants.MAX_ITERATIONS
 
 digits = constants.DIGITS;
 
+
 def get_root_false_position(function_string = 'x**3-3*x+1', xl = 0, xu = 1):
     '''
 
@@ -20,8 +21,8 @@ def get_root_false_position(function_string = 'x**3-3*x+1', xl = 0, xu = 1):
     #  the console we did not find the root and return None (DON'T THROW ANY EXCEPTION )
 
     func = Func(function_string)
-    fl = func.get_value_at(xl)
-    fu = func.get_value_at(xu)
+    fl = func.get_value_at(str(xl))
+    fu = func.get_value_at(str(xu))
 
     if fl >= 0 or fu >= 0:
         print("Sorry but False_position method can not solve an equation with the given interval")
@@ -55,4 +56,5 @@ def get_root_false_position(function_string = 'x**3-3*x+1', xl = 0, xu = 1):
 
 
 
-get_root_false_position()
+
+# get_root_false_position()
