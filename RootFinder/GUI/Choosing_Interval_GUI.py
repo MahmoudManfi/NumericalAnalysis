@@ -3,12 +3,12 @@ from tkinter import *
 
 
 class Interval(Frame):
-    def __init__(self):
-        Frame.__init__(self)
+    def __init__(self,parent):
+        Frame.__init__(self,parent)
 
         self.interval_list = []
 
-        labelframe = Frame(self, padx=5, pady=5, bg='blue')
+        labelframe = Frame(parent, padx=5, pady=5, bg='blue')
         labelframe.pack()
 
         from_label = Label(labelframe, text='From:', bg='blue')
@@ -17,7 +17,7 @@ class Interval(Frame):
         self.leftInterval = Entry(labelframe)
         self.leftInterval.pack(side='left')
 
-        entryframe = Frame(self, padx=5, pady=5, bg='blue')
+        entryframe = Frame(parent, padx=5, pady=5, bg='blue')
         entryframe.pack()
 
         to_label = Label(entryframe, text='To:', bg='blue')
@@ -25,7 +25,7 @@ class Interval(Frame):
 
         rightInterval = Entry(entryframe)
         rightInterval.pack(side='left')
-        button = Button(self, text='Enter', command=self.sumbit_interval, bg='black', fg='orange')
+        button = Button(parent, text='Enter', command=self.sumbit_interval, bg='black', fg='orange')
         button.pack()
 
 
@@ -66,11 +66,11 @@ class Interval(Frame):
     # interval.mainloop()
 
 
-if __name__ == "__main__":
-    interval = Tk()
-    interval.title('Input the Interval')
-    interval.configure(padx=4, pady=4, bg='blue')
-    Interval(interval)
-        # .pack(side="top", fill="both", expand=True)
-    interval.mainloop()
+# if __name__ == "__main__":
+interval = Tk()
+interval.title('Input the Interval')
+interval.configure(padx=4, pady=4, bg='blue')
+Interval(interval)
+    # .pack(side="top", fill="both", expand=True)
+interval.mainloop()
 
