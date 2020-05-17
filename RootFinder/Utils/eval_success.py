@@ -2,8 +2,7 @@ from cmath import sin, cos, tan, exp
 
 from mpmath import ln
 
-import Bracketing.parsing as parse
-import Bracketing.parsing as parse
+import RootFinder.Utils.parsing as Parsing
 
 
 def is_num(num):
@@ -75,7 +74,7 @@ def eval_sub(left, right):
 
 
 def eval_success(function_string, value):
-    terms = parse.parse(function_string)
+    terms = Parsing.parse(function_string)
     if len(terms) == 1 and terms[0] == 'x':
         return value
 

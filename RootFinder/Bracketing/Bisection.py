@@ -1,6 +1,5 @@
-import Bracketing.constants as constants
-from sympy import *
-from Bracketing.Function import Function as Func
+from RootFinder.Utils import constants
+from RootFinder.Utils.Function import Function as Func
 
 digits = constants.DIGITS;
 

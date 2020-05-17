@@ -1,8 +1,7 @@
 from tkinter import *
 
-
 # Gui handler events
-from Bracketing import Interval_InputGUI
+from RootFinder.GUI import Choosing_Method_GUI as methods, Choosing_Interval_GUI
 
 
 def solve_equation(function_string):
@@ -20,12 +19,14 @@ def solve_button_handler():
 
 
 def custom_solve_handler():
-
+    methods.mainloop()
     print("custom solver is here ")
 
 
 def draw_button_handler():
-    interval_list = Interval_InputGUI.interval_list
+    i = Choosing_Interval_GUI.
+    interval_list = Choosing_Interval_GUI()
+
 
     print(interval_list[0])
     # print(type(interval_list))

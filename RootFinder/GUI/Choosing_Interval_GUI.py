@@ -1,14 +1,14 @@
 from tkinter import *
 
-from Bracketing import mainGUI
 
-interval_list = []
+
 
 class Interval(Frame):
     def __init__(self,parent,*args, **kwargs):
         Frame.__init__(self, parent, *args, **kwargs)
 
         self.interval_list = []
+
         labelframe = Frame(self, padx=5, pady=5, bg='blue')
         labelframe.pack()
 

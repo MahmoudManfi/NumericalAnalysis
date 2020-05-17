@@ -1,5 +1,5 @@
-import Bracketing.constants as constants
-from Bracketing.Function import Function as Func
+import RootFinder.Utils.constants as constants
+from RootFinder.Utils.Function import Function as Func
 
 eps = constants.EPS
 max_iterations = constants.MAX_ITERATIONS
@@ -7,7 +7,7 @@ max_iterations = constants.MAX_ITERATIONS
 digits = constants.DIGITS;
 
 
-def get_root_false_position(function_string = 'x**3-3*x+1', xl = 0, xu = 1):
+def find_root_falsePosition(function_string = 'x**3-3*x+1', xl = 0, xu = 1):
     '''
 
     :param function_string: the function  formatted as a string

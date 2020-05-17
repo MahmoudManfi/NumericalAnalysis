@@ -1,9 +1,8 @@
-from cmath import inf, sqrt
+from cmath import inf
 
-import Bracketing.constants as constants
-from Bracketing.Function import Function as Func, Float
-import Bracketing.parsing as parse
-import Bracketing.eval_success as parse_success
+import RootFinder.Utils.eval_success as parse_success
+import RootFinder.Utils.constants as constants
+import RootFinder.Utils.parsing as Parsing
 
 eps = constants.EPS
 max_iterations = constants.MAX_ITERATIONS
@@ -17,7 +16,7 @@ def is_num(num):
 
 
 def get_g(function_string):
-    terms = parse.parse(function_string)
+    terms = Parsing.parse(function_string)
     __g = []
     n = len(terms)
     i = 0
@@ -82,7 +81,7 @@ def get_g(function_string):
     return __g
 
 
-def find_root_fixed_point(function_string, x):
+def find_root_fixedPoint(function_string, x):
     __g = get_g(function_string)
 
     for i in __g:
@@ -111,4 +110,4 @@ def get_root(fun, x):
     return None
 
 
-tt = find_root_fixed_point("x+x**2-8", 0.8)
+# tt = find_root_fixed_point("x+x**2-8", 0.8)
