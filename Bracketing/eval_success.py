@@ -1,15 +1,15 @@
 from cmath import sin, cos, tan, exp
 
 from mpmath import ln
-
-import Bracketing.parsing as parse
 import Bracketing.parsing as parse
 
 
 def is_num(num):
-    if(isinstance(num,complex)):
+    if isinstance(num, complex):
         return True
-    if(isinstance(num,float)):
+    if isinstance(num, float):
+        return True
+    if isinstance(num, int):
         return True
     for i in num:
         if i < '0' or i > '9':
@@ -111,7 +111,10 @@ def eval_success(function_string, value):
     while index < size:
         term = terms[index]
         if term == '**':
-            terms[index - 1:index + 2] = [eval_power(terms[index - 1], terms[index + 1])]
+            if terms[index + 1] == '-':
+                terms[index - 1:index + 3] = [eval_power(terms[index - 1], -1 * terms[index + 2])]
+            else:
+                terms[index - 1:index + 2] = [eval_power(terms[index - 1], terms[index + 1])]
             size = len(terms)
         else:
             index += 1
@@ -121,12 +124,18 @@ def eval_success(function_string, value):
     while index < size:
         term = terms[index]
         if term == '*':
-            terms[index - 1:index + 2] = [eval_mul(terms[index - 1], terms[index + 1])]
+            if terms[index + 1] == '-':
+                terms[index - 1:index + 3] = [eval_mul(terms[index - 1], -1 * terms[index + 2])]
+            else:
+                terms[index - 1:index + 2] = [eval_mul(terms[index - 1], terms[index + 1])]
             size = len(terms)
 
 
         elif term == '/':
-            terms[index - 1:index + 2] = [eval_div(terms[index - 1], terms[index + 1])]
+            if terms[index + 1] == '-':
+                terms[index - 1:index + 3] = [eval_div(terms[index - 1], -1 * terms[index + 2])]
+            else:
+                terms[index - 1:index + 2] = [eval_div(terms[index - 1], terms[index + 1])]
             size = len(terms)
         else:
             index += 1
@@ -139,18 +148,23 @@ def eval_success(function_string, value):
             size = len(terms)
 
         elif term == '-':
-             if index==0 or not is_num(terms[index-1]):
-                 terms[index :index + 2] = [eval_sub(0, terms[index + 1])]
-             else:
-                 terms[index - 1:index + 2] = [eval_sub(terms[index - 1], terms[index + 1])]
-             size = len(terms)
+            if index == 0 or not is_num(terms[index - 1]):
+                terms[index:index + 2] = [eval_sub(0, terms[index + 1])]
+            else:
+                terms[index - 1:index + 2] = [eval_sub(terms[index - 1], terms[index + 1])]
+            size = len(terms)
 
         else:
-             index += 1
+            index += 1
+
+    if len(terms) != 1:
+        raise Exception('bad input ')
 
     return terms[0]
 
 
 # eval_success("tan(5*x+8)**6+x*2+5",1)
-#print(eval_success("tan(5*x*8+9)+sin(78)+exp(x**2)-19/2+((7+2)/8)+ln(5)", 2))
-#print(eval_success("(-1*(sin(x)+exp(x)-8))**(1/2)", .8))
+# print(eval_success("x*-3*-+-+--10", 7))
+# print(eval_success("x+-x+-x+-x*p", 7))
+# print(eval_success("x+-x+-x+-x*x", 7))
+print(eval_success("2tan(2x)/", 7))
