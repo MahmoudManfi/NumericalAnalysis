@@ -21,4 +21,3 @@ class Function:
         derivative = self.f.diff(self.__x)
         ans = derivative.subs(self.__x, x)
         return ans
-
