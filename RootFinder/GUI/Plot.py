@@ -6,6 +6,7 @@ from matplotlib.backends._backend_tk import NavigationToolbar2Tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
+from RootFinder.GUI import Choosing_Interval_GUI
 from RootFinder.Utils.Function import Function as Func
 
 
@@ -17,25 +18,25 @@ def draw_from_lists(xs, ys):
     :return: plotting the function in a new window
     """
     # print('fewj')
-    app = Tk()
+    # app = Tk()
+    #
+    # figure = Figure(figsize=(5, 5), dpi=100)
+    # figure.add_subplot(111).plot(xs,ys)
+    #
+    # canvas = FigureCanvasTkAgg(figure, master=app)
+    # canvas.draw()
+    # canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
+    # toolbar = NavigationToolbar2Tk(canvas, app)
+    # toolbar.update()
+    # canvas.get_tk_widget().pack(side=TOP, fill=BOTH, expand=1)
+    #
+    # app.mainloop()
 
-    figure = Figure(figsize=(5, 5), dpi=100)
-    figure.add_subplot(111).plot(xs,ys)
-
-    canvas = FigureCanvasTkAgg(figure, master=app)
-    canvas.draw()
-    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
-    toolbar = NavigationToolbar2Tk(canvas, app)
-    toolbar.update()
-    canvas.get_tk_widget().pack(side=TOP, fill=BOTH, expand=1)
-
-    app.mainloop()
-
-    # plt.plot(xs, ys)
-    # plt.show()
+    plt.plot(xs, ys)
+    plt.show()
 
 
-def draw(function_string, left, right):
+def create_lists(function_string, left, right):
     seg = (right - left) / 50000
     fun = Func(function_string)
     xs = list()
@@ -51,6 +52,14 @@ def draw(function_string, left, right):
 
 
 
+def draw(eqn):
+    interval = Tk()
+    interval.title('Input the Interval')
+    interval.configure(padx=4, pady=4, bg='blue')
+    i = Choosing_Interval_GUI.Interval(interval)
+    interval.mainloop()
+    interval_list = i.interval_list
+    create_lists(eqn,interval_list[0],interval_list[1])
 
 
 

@@ -2,7 +2,7 @@ from tkinter import *
 
 # Gui handler events
 from RootFinder.GUI import Choosing_Interval_GUI
-from RootFinder.GUI import Choosing_Method_GUI as methods
+from RootFinder.GUI import Choosing_Method_GUI
 from RootFinder.GUI.Plot import draw
 
 
@@ -16,42 +16,32 @@ def solve_equation(function_string):
 
 
 def get_equation():
-    print(str(equation_entry.get()))
+    eqn = equation_entry.get()
+    print(eqn)
+    if not eqn:
+        warn_error()
+        return None
+
     return str(equation_entry.get())
 
 
 def solve_button_handler():
     eqn = get_equation()
-    if not eqn:
-        warn_error()
-        return None
     equation = equation_entry.get()
     solve_equation(equation)
 
 
 def custom_solve_handler():
-    eqn = get_equation()
-    if not eqn:
-        warn_error()
-        return None
-    methods.mainloop()
-    print("custom solver is here ")
-
-
+    methodsGUI = Tk()
+    methodsGUI.title('choose the method type')
+    Choosing_Method_GUI.Methods(methodsGUI,get_equation())
+    methodsGUI.mainloop()
+    return None
 
 def draw_button_handler():
-    eqn = get_equation()
-    if not eqn:
-        warn_error()
-        return None
-    interval = Tk()
-    interval.title('Input the Interval')
-    interval.configure(padx=4, pady=4, bg='blue')
-    i = Choosing_Interval_GUI.Interval(interval)
-    interval.mainloop()
-    interval_list = i.interval_list
-    draw(eqn,interval_list[0],interval_list[1])
-    return None
+    draw(get_equation())
+
+
 
 
 # Gui elements

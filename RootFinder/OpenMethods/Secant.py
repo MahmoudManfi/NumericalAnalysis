@@ -4,7 +4,7 @@ from RootFinder.Utils.Function import Function as Func
 
 digits = constants.DIGITS;
 
-def find_root_secant(function_string, x_prev, x_cur):
+def find_root_secant(function_string, x_prev=0, x_cur=1):
     """
     :param x_prev:
     :param x_cur:
