@@ -28,6 +28,7 @@ class Interval(Frame):
         button = Button(parent, text='Enter', command=lambda: self.sumbit_interval(parent), bg='black', fg='orange')
         button.pack()
 
+        self.error_label = Label(parent, text = 'check you entered valid intervals!', bg = 'black', fg = 'red')
 
     def sumbit_interval(self,parent):
         try:
@@ -46,14 +47,11 @@ class Interval(Frame):
             self.warn_error(parent)
             return
         parent.destroy()
-        print('dlgko')
         self.interval_list = [left,right]
-        # print(interval_list[0],interval_list[1])
 
 
     def warn_error(self,parent):
-        label = Label(parent, text = 'check you entered valid intervals!', bg = 'black', fg = 'red')
-        label.pack()
+        self.error_label.pack()
 
 
 
