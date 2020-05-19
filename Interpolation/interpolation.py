@@ -15,7 +15,7 @@ def check(x, fx, n):
     for i in range(size_x):
         index = matrix[0].index(x[i],0,size_x)
         fx[i] = matrix[1][index]
-
+    return True
 
 # put (x - value) this format in string
 def build_parentheses(x):
@@ -117,8 +117,8 @@ class Lagrange:
         return res
 
 
-# x = [5,2,10,4,3]
-# fx = [2, 14, 1000, 242, 602]
+# x = [1,2,3,4,5]
+# fx = [10, 20, 30, 40, 50]
 # check(x, fx, 4)
 # newton = Newton()
 # b = newton.cal(x, fx)
