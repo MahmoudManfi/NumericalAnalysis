@@ -79,7 +79,7 @@ class Point():
 
 
     def open_file(self):
-        self.parent.withdraw()
+        # self.parent.withdraw()
         condition = True
         while condition:
             file_path = filedialog.askopenfilename()
@@ -98,9 +98,9 @@ class Point():
 
     def solve(self):
         print('fnl')
-        # if not interpolation.check(self.Xvalues, self.Yvalues, len(self.Xvalues)):
-        #     self.warn_error()
-        #     return
+        if not interpolation.check(self.Xvalues, self.Yvalues, self.order):
+            self.warn_error()
+            return
         print('fnl')
         self.parent.destroy()
         if self.var == 1:
