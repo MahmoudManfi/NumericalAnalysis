@@ -110,4 +110,4 @@ def get_root(fun, x):
     return None
 
 
-# tt = find_root_fixed_point("x+x**2-8", 0.8)
+tt = find_root_fixedPoint("x+x**2-8", 0.8)

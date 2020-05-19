@@ -58,8 +58,9 @@ def draw(eqn):
     interval.configure(padx=4, pady=4, bg='blue')
     i = Choosing_Interval_GUI.Interval(interval)
     interval.mainloop()
+
     interval_list = i.interval_list
-    create_lists(eqn,interval_list[0],interval_list[1])
+    create_lists(eqn, interval_list[0], interval_list[1])
 
 
 

@@ -1,3 +1,5 @@
+from RootFinder.Utils.Function import Function
+
 # check the validation of inputs
 def check(x, fx, n):
     matrix = [x.copy(), fx.copy()]  # to save the order of x and fx
@@ -22,7 +24,7 @@ def build_parentheses(x):
         if x[i] == 0:
             container.append('x')
         else:
-            container.append('(x - ' + str(x[i]) + ')')
+            container.append('*(x - ' + str(x[i]) + ')')
     return container
 
 
@@ -115,9 +117,12 @@ class Lagrange:
         return res
 
 
-x = [5,2,10,4,3]
-fx = [2, 14, 1000, 242, 602]
-check(x, fx, 4)
-newton = Lagrange()
-b = newton.cal(x, fx)
-print(newton.get_equ(x,b))
+# x = [5,2,10,4,3]
+# fx = [2, 14, 1000, 242, 602]
+# check(x, fx, 4)
+# newton = Newton()
+# b = newton.cal(x, fx)
+# eqn = newton.get_equ(x,b)
+# eqn = eqn.replace('*','')
+# # f = Function(eqn)
+# print(eqn)
