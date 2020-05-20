@@ -15,8 +15,8 @@ def printOurFile():
 
     window = Tk()
     window.title("Report")
-    window.geometry('750x700')
-    txt = scrolledtext.ScrolledText(window, width=700, height=750)
-    txt.grid(column=0, row=0)
+    window.geometry('1400x700')
+    txt = scrolledtext.ScrolledText(window, width=1400, height=700)
+    txt.pack()
     txt.insert(INSERT, content)
     window.mainloop()

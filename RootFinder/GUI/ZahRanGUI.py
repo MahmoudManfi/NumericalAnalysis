@@ -103,8 +103,10 @@ def run():
             return
     else:
         return
-    root.insert(INSERT, ans)
-    ZahRanReportGUI.printOurFile()
+
+    if ans is not None:
+        root.insert(INSERT, ans)
+        ZahRanReportGUI.printOurFile()
 
 
 bisection = Radiobutton(chooseMethodTab, text='Bisection', value=1, variable=selected, command=clicked). \
@@ -118,25 +120,25 @@ newton = Radiobutton(chooseMethodTab, text='Newton', value=4, variable=selected,
 secant = Radiobutton(chooseMethodTab, text='Secant', value=5, variable=selected, command=clicked). \
     pack(anchor=W)
 Label(chooseMethodTab, font=large_font, text='Initial Guesses').pack(anchor=S)
-labelLeft = Label(chooseMethodTab, text='From :').pack(anchor=W)
+labelLeft = Label(chooseMethodTab, text='From :').pack(anchor=S)
 leftEntry = Entry(chooseMethodTab, state='disabled')
-leftEntry.pack(anchor=W)
-labelRight = Label(chooseMethodTab, text='To :').pack(anchor=W)
+leftEntry.pack(anchor=S)
+labelRight = Label(chooseMethodTab, text='To :').pack(anchor=S)
 rightEntry = Entry(chooseMethodTab, state='disabled')
-rightEntry.pack(anchor=W)
-labelOne = Label(chooseMethodTab, text='Initial :').pack(anchor=W)
+rightEntry.pack(anchor=S)
+labelOne = Label(chooseMethodTab, text='Initial :').pack(anchor=S)
 oneEntry = Entry(chooseMethodTab, state='disabled')
-oneEntry.pack(anchor=W)
-Label(chooseMethodTab, text='Max Iterations :').pack(anchor=W)
+oneEntry.pack(anchor=S)
+Label(chooseMethodTab, text='Max Iterations :').pack(anchor=S)
 iterationsEntry = Entry(chooseMethodTab)
 iterationsEntry.insert(END, '50')
-iterationsEntry.pack(anchor=W)
-Label(chooseMethodTab, text='Eps :').pack(anchor=W)
+iterationsEntry.pack(anchor=S)
+Label(chooseMethodTab, text='Eps :').pack(anchor=S)
 epsEntry = Entry(chooseMethodTab)
 epsEntry.insert(END, '0.00001')
-epsEntry.pack(anchor=W)
-btn = Button(chooseMethodTab, font=large_font, text="Run", command=run, ).pack(anchor=S)
-Label(chooseMethodTab, text='\nRoot is', font=large_font, fg="red").pack(anchor=S)
+epsEntry.pack(anchor=S)
+btn = Button(chooseMethodTab, font=large_font, text="Run", command=run).pack(pady=10, anchor=S)
+Label(chooseMethodTab, text='Root is', font=large_font, fg="red").pack(anchor=S)
 root = scrolledtext.ScrolledText(chooseMethodTab, width=30, height=1)
 root.pack(anchor=S)
 
@@ -146,17 +148,22 @@ root.pack(anchor=S)
 # tab 3 plot
 def plotFun():
     try:
+        constants.PLOT_POINTS = float(plotPerI.get())
         Plot.draw(equation_entry.get(), float(plotFromEntry.get()), float(plotToEntry.get()))
     except:
         messagebox.showwarning('Error', 'Error happened in values, please enter again')
         return
 
 
-plotFrom = Label(plot, text='From :').pack(anchor=W)
+plotFrom = Label(plot, text='From :').pack(anchor=S)
 plotFromEntry = Entry(plot)
-plotFromEntry.pack(anchor=W)
-plotTo = Label(plot, text='To :').pack(anchor=W)
+plotFromEntry.pack(anchor=S)
+plotTo = Label(plot, text='To :').pack(anchor=S)
 plotToEntry = Entry(plot)
-plotToEntry.pack(anchor=W)
-plotButton = Button(plot, font=large_font, text="Plot", command=plotFun).pack(anchor=S)
+plotToEntry.pack(anchor=S)
+Label(plot, text='number of plot points :').pack(anchor=S)
+plotPerI = Entry(plot)
+plotPerI.pack(anchor=S)
+plotPerI.insert(END, '50')
+plotButton = Button(plot, font=large_font, text="Plot", command=plotFun).pack(pady=10, anchor=S)
 window.mainloop()
