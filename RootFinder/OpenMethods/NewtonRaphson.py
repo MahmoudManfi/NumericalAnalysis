@@ -22,7 +22,7 @@ def find_root_newtonRaphson(function_string, x = 0):
             break
         x = x - r
 
-    if found == False:
+    if not found:
         print("The method diverged .Sorry but we can not solve this equation using newton ")
         return None
     else:
