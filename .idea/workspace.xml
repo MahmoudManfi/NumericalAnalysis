@@ -20,31 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d42cca-e9a1-4635-a057-86a00ca8a4a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Interpolation/GUI/Points.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interpolation/GUI/Queries.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interpolation/interpolation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interpolation/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RootFinder/GUI/ZahRanGUI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RootFinder/GUI/ZahRanReportGUI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/muller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RootFinder/Utils/Formatter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customsolve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpolation/GUI/Interpolation_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interpolation/GUI/Interpolation_GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpolation/GUI/Queries_GUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/Bracketing/Bisection.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Bracketing/Bisection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/Bracketing/FalsePosition.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Bracketing/FalsePosition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Interval_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Interval_GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Method_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Method_GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/Plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/Plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/RootFinder_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/RootFinder_GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/OpenMethods/FixedPoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/FixedPoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/OpenMethods/NewtonRaphson.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/NewtonRaphson.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/OpenMethods/Secant.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/Secant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/Utils/Function.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Utils/Function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/Utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Utils/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/Utils/die.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/die.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RootFinder/Utils/eval_success.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Utils/eval_success.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RootFinder/GUI/report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RootFinder/functionsEntry.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/ZahRanGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/ZahRanGUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +199,7 @@
       <workItem from="1589722769905" duration="10168000" />
       <workItem from="1589852742233" duration="4311000" />
       <workItem from="1589939377229" duration="948000" />
-      <workItem from="1589990549024" duration="10503000" />
+      <workItem from="1589990549024" duration="10909000" />
     </task>
     <servers />
   </component>
