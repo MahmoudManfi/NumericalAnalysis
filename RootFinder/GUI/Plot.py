@@ -36,7 +36,7 @@ def draw(function_string, left, right):
     xs = list()
     ys = list()
     while left < right:
-        print(left)
+        #print(left)
         xs.append(left)
         ys.append(fun.get_value_at(left))
         left += seg
