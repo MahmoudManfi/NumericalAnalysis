@@ -1,5 +1,7 @@
 from tkinter import *
 
+from datetime import datetime
+
 from RootFinder.Bracketing.Bisection import find_root_bisection
 from RootFinder.Bracketing.FalsePosition import find_root_falsePosition
 from RootFinder.OpenMethods.FixedPoint import find_root_fixedPoint
@@ -41,25 +43,35 @@ class Methods():
 
     def bisection_handler(self):
         interval_list = draw(self.function)
+        excution_time_begin = datetime.now()
         find_root_bisection(self.function,interval_list[0],interval_list[1])
+        excution_time = datetime.now()-excution_time_begin
         Frame.destroy()
 
 
     def falsePosition_handler(self):
         interval_list = draw(self.function)
+        excution_time_begin = datetime.now()
         find_root_falsePosition(self.function,interval_list[0],interval_list[1])
+        excution_time = datetime.now()-excution_time_begin
         Frame.destroy()
 
     def fixedPoint_handler(self):
+        excution_time_begin = datetime.now()
         find_root_fixedPoint(self.function)
+        excution_time = datetime.now()-excution_time_begin
         Frame.destroy()
 
     def newtonRaphson_handler(self):
+        excution_time_begin = datetime.now()
         find_root_newtonRaphson(self.function)
+        excution_time = datetime.now()-excution_time_begin
         Frame.destroy()
 
     def secant_handler(self):
+        excution_time_begin = datetime.now()
         find_root_secant(self.function)
+        excution_time = datetime.now()-excution_time_begin
         Frame.destroy()
 
 

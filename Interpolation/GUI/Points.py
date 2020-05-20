@@ -1,3 +1,4 @@
+from datetime import datetime
 from tkinter import *
 from tkinter import filedialog
 from Interpolation import interpolation
@@ -97,24 +98,24 @@ class Point():
 
 
     def solve(self):
-        print('fnl')
         if not interpolation.check(self.Xvalues, self.Yvalues, self.order):
             self.warn_error()
             return
-        print('fnl')
         self.parent.destroy()
         if self.var == 1:
             n = interpolation.Newton()
         else:
             n = interpolation.Lagrange()
-        print('fnl')
         b = n.cal(self.Xvalues, self.Yvalues)
+        excution_time_begin = datetime.now()
+        # print(excution_time_begin)
         self.eqn = n.get_equ(self.Xvalues, b)
-        print('fnl')
+        # print(datetime.now())
+        excution_time = datetime.now() - excution_time_begin
+        # print(excution_time,type(excution_time))
         queries_GUI = Tk()
         queries_GUI.configure(bg='blue')
-        queries(queries_GUI,self.eqn)
-        print('fnl')
+        queries(queries_GUI,self.eqn,excution_time)
 
         queries_GUI.mainloop()
 
