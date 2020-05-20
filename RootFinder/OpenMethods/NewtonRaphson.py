@@ -13,14 +13,14 @@ def find_root_newtonRaphson(function_string, x = 0):
     """
     fun = Func(function_string)
     found = False
-    for i in range(0, 50):
+    for i in range(0, constants.MAX_ITERATIONS):
         fx = round(fun.get_value_at(x), digits)
         gx = round(fun.get_derivative_value_at(x), digits)  # gx is d/dx (fx)
         r = (fx / gx)
         if abs(r) < constants.EPS:
             found = True
             break
-        x = round(x - r)
+        x = x - r
 
     if found == False:
         print("The method diverged .Sorry but we can not solve this equation using newton ")
@@ -28,3 +28,5 @@ def find_root_newtonRaphson(function_string, x = 0):
     else:
         return x
 
+
+#print(find_root_newtonRaphson("2*x - 1 " , 0.25))
