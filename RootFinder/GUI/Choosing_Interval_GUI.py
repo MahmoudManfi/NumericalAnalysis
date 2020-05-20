@@ -6,7 +6,6 @@ class Interval():
     def __init__(self,parent):
         self.parent = parent
         self.interval_list = []
-
         labelframe = Frame(parent, padx=5, pady=5, bg='blue')
         labelframe.pack()
 

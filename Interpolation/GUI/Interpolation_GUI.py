@@ -1,12 +1,5 @@
 from tkinter import *
-from Interpolation.GUI.Queries_GUI import query
-
-def newton_handler(queries_GUI,order):
-
-    return
-def lagrange_handler(queries_GUI,order):
-    return
-
+from Interpolation.GUI.Points import Point
 
 def warn_error():
     error_label.pack()
@@ -18,19 +11,12 @@ def sumbit():
     except:
         warn_error()
         return
-    queries_GUI = Tk()
-    queries_GUI.configure(bg='blue')
-
-
-    queries = query(queries_GUI,order)
-
-    if var == 1:
-        newton_handler(queries.Xvalues,queries.Yvalues)
-    else:
-        lagrange_handler(queries.Xvalues,queries.Yvalues)
-
+    print(order,var)
+    Point_GUI = Tk()
+    Point_GUI.configure(bg='blue')
+    Point(Point_GUI,order,var)
     window.destroy()
-    queries_GUI.mainloop()
+    Point_GUI.mainloop()
 
 
 
@@ -60,7 +46,7 @@ large_font = ('Verdana',20)
 order_entry = Entry(window, font = large_font)
 order_entry.pack(padx = 5, pady = 5)
 
-button = Button(text = 'next',command = sumbit,bg = 'black', fg= 'orange',pady= 4)
+button = Button(text = 'next',command = sumbit,bg = 'black', fg= 'orange')
 button.pack(fill = X,padx= 5,pady = 5)
 
 error_label = Label(window, text='check you entered valid order!', bg='black', fg='red')

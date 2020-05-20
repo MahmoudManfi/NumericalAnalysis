@@ -1,15 +1,12 @@
 import RootFinder.Utils.constants as constants
 from RootFinder.Utils.Function import Function as Func
-
+from RootFinder.Utils.Formatter import Formatter as Formatter
 eps = constants.EPS
-max_iterations = constants.MAX_ITERATIONS
-
-digits = constants.DIGITS;
 
 
-def find_root_falsePosition(function_string = 'x**3-3*x+1', xl = 0, xu = 1):
+def find_root_falsePosition(function_string , xl, xu):
+
     '''
-
     :param function_string: the function  formatted as a string
            You can get the value of the function by importing the  Function module
     :param xl: the lowerbound x
@@ -19,42 +16,41 @@ def find_root_falsePosition(function_string = 'x**3-3*x+1', xl = 0, xu = 1):
     # *any assumptions should be stated cleary in comments before the function
     # * In case the you could not find the root (the method diverged , we iterated more that max_iterations, you can simply print in
     #  the console we did not find the root and return None (DON'T THROW ANY EXCEPTION )
-
+    formatter = Formatter()
+    formatter.add_entry("Xl", "Xu", "F(Xl)", "F(Xu)", "Xr","F(Xr)")
     func = Func(function_string)
-    fl = func.get_value_at(str(xl))
-    fu = func.get_value_at(str(xu))
+    fl = func.get_value_at((xl))
+    fu = func.get_value_at((xu))
 
-    if fl >= 0 or fu >= 0:
+    if ((fl < 0 and fu<0) or ((fu > 0) and (fl> 0))):
         print("Sorry but False_position method can not solve an equation with the given interval")
         return None
 
-
-    for i in range(1, max_iterations):
-        xrnew = xl*fu - xu*fl / (fu-fl)
-        fr = Func(xrnew, digits)
-        if fr < 0:  # the exact root is found.
-            print('exact root is found')
+    for i in range(0, constants.MAX_ITERATIONS):
+        xrnew = (xl*fu - xu*fl) / (fu-fl)
+        fr = func.get_value_at(xrnew)
+        formatter.add_entry(xl, fl, xu, fu, xrnew, fr)
+        if fr == 0:  # the exact root is found.
+            print('exact root is found using false position ')
+            formatter.display_steps()
             return xrnew
-        elif fr < 0:
-            xrold = xrnew
+        elif fr < 0 and fl < 0 :
             xl = xrnew
             fl = fr
         else:
-            xrold = xrnew
             xu = xrnew
             fu = fr
 
-        if i > 1 and abs(xrnew - xrold) < eps: # the approximate root is found.
-            print('False Position method has converged')
+        if (i > 0) and (abs(xrnew - xrold) < eps):
+            print('False Position method has converged ')
+            formatter.display_steps()
             return xrnew
 
-
-        print('step', xl, xu, xrnew, fr)
+        xrold = xrnew
 
     print("The method diverged .Sorry but we can not solve this equation using False_position ")
     return None
 
 
-
-
+#print(find_root_falsePosition("2*x**3 - 1" , -1 , 3))
 # get_root_false_position()

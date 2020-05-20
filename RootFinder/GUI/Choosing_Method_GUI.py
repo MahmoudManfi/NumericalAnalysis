@@ -5,65 +5,62 @@ from RootFinder.Bracketing.FalsePosition import find_root_falsePosition
 from RootFinder.OpenMethods.FixedPoint import find_root_fixedPoint
 from RootFinder.OpenMethods.NewtonRaphson import find_root_newtonRaphson
 from RootFinder.OpenMethods.Secant import find_root_secant
-from RootFinder.GUI.Plot import draw
 
-class Methods():
-    def __init__(self,parent,function):
-        self.parent = parent
-        self.function = function
-        bracketingMethods_label = Label(parent, text='Bracketing Methods')
+from RootFinder.GUI import Plot as Plot, Choosing_Interval_GUI as Interval
+
+
+class Methods(Frame):
+    def __init__(self, parent, *args, **kwargs):
+        Frame.__init__(self, parent, *args, **kwargs)
+        bracketingMethods_label = Label(methods, text='Bracketing Methods')
         bracketingMethods_label.pack()
-
-        bisection_button = Button(parent, text='Bisection Method', command = self.bisection_handler, bg='black', fg='orange',
+        bisection_button = Button(methods, text='Bisection Method', command=self.bisection_handler, bg='black',
+                                  fg='orange',
                                   pady='10')
         bisection_button.pack(fill=X)
-
-        falsePosition_button = Button(parent, text='False Position', command=self.falsePosition_handler, bg='black',
+        falsePosition_button = Button(methods, text='False Position', command=self.falsePosition_handler, bg='black',
                                       fg='orange', pady='10')
         falsePosition_button.pack(fill=X)
-
-        openMethods_label = Label(parent, text='Open Methods')
+        openMethods_label = Label(methods, text='Open Methods')
         openMethods_label.pack()
-
-        fixedPoint_button = Button(parent, text='Fixed Point', command=self.fixedPoint_handler, bg='black', fg='orange',
+        fixedPoint_button = Button(methods, text='Fixed Point', command=self.fixedPoint_handler, bg='black',
+                                   fg='orange',
                                    pady='10')
         fixedPoint_button.pack(fill=X)
-
-        newtonRaphson_button = Button(parent, text='Newton Raphson', command=self.newtonRaphson_handler, bg='black',
+        newtonRaphson_button = Button(methods, text='Newton Raphson', command=self.newtonRaphson_handler, bg='black',
                                       fg='orange', pady='10')
-        newtonRaphson_button.pack(fill= X)
-
-        secant_button = Button(parent, text='Secant', command=self.secant_handler, bg='black', fg='orange', pady='10')
+        newtonRaphson_button.pack(fill=X)
+        secant_button = Button(methods, text='Secant', command=self.secant_handler, bg='black', fg='orange', pady='10')
         secant_button.pack(fill=X)
 
-
-
-
-    def bisection_handler(self):
-        interval_list = draw(self.function)
-        find_root_bisection(self.function,interval_list[0],interval_list[1])
+    def bisection_handler(self, function):
+        i = Interval.mainloop()
+        i
+        interval = Interval.interval_list
+        # Plot.draw(function, interval[0], interval[1])
+        find_root_bisection()
         Frame.destroy()
 
-
     def falsePosition_handler(self):
-        interval_list = draw(self.function)
-        find_root_falsePosition(self.function,interval_list[0],interval_list[1])
+        Interval.mainloop()
+        find_root_falsePosition()
         Frame.destroy()
 
     def fixedPoint_handler(self):
-        find_root_fixedPoint(self.function)
+        find_root_fixedPoint()
         Frame.destroy()
 
     def newtonRaphson_handler(self):
-        find_root_newtonRaphson(self.function)
+        find_root_newtonRaphson()
         Frame.destroy()
 
     def secant_handler(self):
-        find_root_secant(self.function)
+        find_root_secant()
         Frame.destroy()
 
 
+methods = Tk()
+methods.title('choose the method type')
+Methods(methods)
+methods.mainloop()
 
-# m = Tk()
-# Methods(m,"x")
-# m.mainloop()

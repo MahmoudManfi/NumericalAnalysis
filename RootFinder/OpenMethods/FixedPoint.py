@@ -5,7 +5,6 @@ import RootFinder.Utils.constants as constants
 import RootFinder.Utils.parsing as Parsing
 
 eps = constants.EPS
-max_iterations = constants.MAX_ITERATIONS
 
 
 def is_num(num):
@@ -110,4 +109,5 @@ def get_root(fun, x):
     return None
 
 
-# tt = find_root_fixed_point("x+x**2-8", 0.8)
+tt = find_root_fixedPoint("2", 0.8)
+print(tt)

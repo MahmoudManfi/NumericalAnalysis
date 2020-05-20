@@ -20,8 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d42cca-e9a1-4635-a057-86a00ca8a4a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RootFinder/Utils/die.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interpolation/GUI/Points.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interpolation/GUI/Queries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interpolation/interpolation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interpolation/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RootFinder/GUI/ZahRanGUI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RootFinder/GUI/ZahRanReportGUI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/muller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RootFinder/Utils/Formatter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customsolve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpolation/GUI/Interpolation_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interpolation/GUI/Interpolation_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpolation/GUI/Queries_GUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/Bracketing/Bisection.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Bracketing/Bisection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/Bracketing/FalsePosition.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Bracketing/FalsePosition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Interval_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Interval_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Method_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/Choosing_Method_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/Plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/Plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/GUI/RootFinder_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/GUI/RootFinder_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/OpenMethods/FixedPoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/FixedPoint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RootFinder/OpenMethods/NewtonRaphson.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/NewtonRaphson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/OpenMethods/Secant.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/Secant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/Utils/Function.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Utils/Function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/Utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Utils/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RootFinder/Utils/die.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/OpenMethods/die.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RootFinder/Utils/eval_success.py" beforeDir="false" afterPath="$PROJECT_DIR$/RootFinder/Utils/eval_success.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +80,34 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.die">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ahmed Alzayadi\Desktop\Programming\machine learining\numercal\NumericalAnalysis\RootFinder\OpenMethods" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.die (1)">
+    <configuration name="FixedPoint" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NumericalAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RootFinder/OpenMethods" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RootFinder/OpenMethods/FixedPoint.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="NewtonRaphson" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NumericalAnalysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +130,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="die (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NumericalAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RootFinder/OpenMethods" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RootFinder/OpenMethods/die.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="die" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NumericalAnalysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,7 +165,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RootFinder/Utils/die.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Ahmed Alzayadi\Desktop\Programming\machine learining\numercal\NumericalAnalysis\RootFinder\OpenMethods\die.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,57 +196,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="eval_success" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NumericalAnalysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Bracketing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bracketing/eval_success.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="parsing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NumericalAnalysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Bracketing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bracketing/parsing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.die (1)" />
+        <item itemvalue="Python.FixedPoint" />
         <item itemvalue="Python.die" />
         <item itemvalue="Python.NewtonRaphson" />
         <item itemvalue="Python.eval_success (1)" />
-        <item itemvalue="Python.eval_success" />
-        <item itemvalue="Python.parsing" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +220,7 @@
       <workItem from="1589722769905" duration="10168000" />
       <workItem from="1589852742233" duration="4311000" />
       <workItem from="1589939377229" duration="948000" />
-      <workItem from="1589990549024" duration="550000" />
+      <workItem from="1589990549024" duration="10503000" />
     </task>
     <servers />
   </component>
@@ -225,22 +252,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589654418608" />
-    <state width="1493" height="233" key="GridCell.Tab.0.bottom" timestamp="1589856844772">
+    <state width="1493" height="233" key="GridCell.Tab.0.bottom" timestamp="1590001268607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589856844772" />
-    <state width="1493" height="233" key="GridCell.Tab.0.center" timestamp="1589856844772">
+    <state width="1493" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590001268607" />
+    <state width="1493" height="233" key="GridCell.Tab.0.center" timestamp="1590001268607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589856844772" />
-    <state width="1493" height="233" key="GridCell.Tab.0.left" timestamp="1589856844772">
+    <state width="1493" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590001268607" />
+    <state width="1493" height="233" key="GridCell.Tab.0.left" timestamp="1590001268607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589856844772" />
-    <state width="1493" height="233" key="GridCell.Tab.0.right" timestamp="1589856844772">
+    <state width="1493" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590001268607" />
+    <state width="1493" height="233" key="GridCell.Tab.0.right" timestamp="1590001268607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589856844772" />
+    <state width="1493" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590001268607" />
     <state width="1493" height="287" key="GridCell.Tab.1.bottom" timestamp="1589853536483">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -261,6 +288,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589654319316" />
+    <state x="611" y="185" key="refactoring.ChangeSignatureDialog" timestamp="1590004209926">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="611" y="185" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1590004209926" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -277,12 +308,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RootFinder/OpenMethods/NewtonRaphson.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RootFinder/OpenMethods/NewtonRaphson.py</url>
-          <line>13</line>
+          <line>14</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
@@ -296,9 +322,11 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NumericalAnalysis$com.coverage" NAME="com Coverage Results" MODIFIED="1589652766494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/problem" />
     <SUITE FILE_PATH="coverage/NumericalAnalysis$parsing.coverage" NAME="parsing Coverage Results" MODIFIED="1589800044487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bracketing" />
+    <SUITE FILE_PATH="coverage/NumericalAnalysis$FixedPoint.coverage" NAME="FixedPoint Coverage Results" MODIFIED="1589992940841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RootFinder/OpenMethods" />
     <SUITE FILE_PATH="coverage/NumericalAnalysis$eval_success__1_.coverage" NAME="eval_success (1) Coverage Results" MODIFIED="1589805156837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RootFinder/Utils" />
     <SUITE FILE_PATH="coverage/NumericalAnalysis$die.coverage" NAME="die Coverage Results" MODIFIED="1589942157484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RootFinder/Utils" />
     <SUITE FILE_PATH="coverage/NumericalAnalysis$eval_success.coverage" NAME="eval_success Coverage Results" MODIFIED="1589802527030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bracketing" />
+    <SUITE FILE_PATH="coverage/NumericalAnalysis$die__1_.coverage" NAME="die (1) Coverage Results" MODIFIED="1590001268607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RootFinder/OpenMethods" />
     <SUITE FILE_PATH="coverage/NumericalAnalysis$fixed_point.coverage" NAME="fixed_point Coverage Results" MODIFIED="1589687668677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bracketing" />
     <SUITE FILE_PATH="coverage/NumericalAnalysis$NewtonRaphson.coverage" NAME="NewtonRaphson Coverage Results" MODIFIED="1589853584696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RootFinder/OpenMethods" />
   </component>
