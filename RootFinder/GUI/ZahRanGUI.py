@@ -7,13 +7,15 @@ from RootFinder.OpenMethods import FixedPoint, NewtonRaphson, Secant
 from RootFinder.GUI import Plot
 from RootFinder.GUI import ZahRanReportGUI
 from tkinter import scrolledtext
+from tkinter import filedialog
 
 # window
 window = Tk()
-window.title("Test")
-window.geometry('350x620')
+window.title("Root Finder")
+window.geometry('350x625')
 
 # Entry
+Label(window, text='Enter f(x) :').pack(anchor=S)
 upFrame = Frame(window, bd=1, bg='black')
 upFrame.pack(fill=X, padx=5, pady=5)
 large_font = ('Verdana', 20)
@@ -144,6 +146,40 @@ root.pack(anchor=S)
 
 
 # tab 2
+def randomSolve(fun):
+    print(fun)
+
+
+def solveFile(fileName):
+    try:
+        with open(fileName, 'r') as file:
+            content = file.read().split('\n')
+        # f = open("report.txt", "r")
+        # content = f.read()
+    except:
+        messagebox.showwarning('Error', 'Error while opening the file')
+        return
+    for i in content:
+        solve(i)
+
+
+def fileDialog():
+    filename = filedialog.askopenfilename(initialdir="/", title="Select A File", filetype=(("text files", "*.txt"),
+                                                                                           ("all files", "*.*")))
+    browser.config(text=filename)
+    if filename is None:
+        return
+    solveFile(filename)
+
+
+Label(customMethodTab, text='Solve the written function :').pack(pady=10, anchor=S)
+solve = Button(customMethodTab, font=large_font, text="Run", command=randomSolve) \
+    .pack(anchor=S)
+
+Label(customMethodTab, text='Solve file of functions :').pack(pady=10, anchor=S)
+browser = Button(customMethodTab, text="browse..", command=fileDialog)
+browser.pack(anchor=S)
+
 
 # tab 3 plot
 def plotFun():
