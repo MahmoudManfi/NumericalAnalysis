@@ -3,7 +3,7 @@ A Project with an Interactive GUI in Python that implements some of common Numer
 
 This Project consists of two Parts:
 
-##Part-1:
+## Part-1:
 
 A Root Finder Program which takes as an input the equation, the
 technique to use and its required parameters (e.g. interval for the bisection method).
@@ -14,7 +14,7 @@ The aim of this part is to compare and analyze the behavior of the different num
 : Bisection, False-position, Fixed point, Newton-Raphson and Secant.
 
 
-##Part-2:
+## Part-2:
 
 A program for querying the values of specific points using
 interpolation which takes as an input the polynomial order, sample point(s), corresponding value(s),
