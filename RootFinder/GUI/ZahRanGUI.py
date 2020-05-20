@@ -77,23 +77,30 @@ def run():
         if right <= left:
             messagebox.showwarning('Error', 'Right bound must be bigger than left bound')
             return
-        if selected.get() == 1:
-            ans = (Bisection.find_root_bisection(function_string=fun, l=left, r=right))
-        elif selected.get() == 2:
-            ans = (FalsePosition.find_root_falsePosition(function_string=fun, xl=left, xu=right))
-        elif selected.get() == 5:
-            ans = (Secant.find_root_secant(function_string=fun, x_prev=left, x_cur=right))
+        try:
+            if selected.get() == 1:
+                ans = (Bisection.find_root_bisection(function_string=fun, l=left, r=right))
+            elif selected.get() == 2:
+                ans = (FalsePosition.find_root_falsePosition(function_string=fun, xl=left, xu=right))
+            elif selected.get() == 5:
+                ans = (Secant.find_root_secant(function_string=fun, x_prev=left, x_cur=right))
+        except:
+            messagebox.showwarning('Error', 'Error in calculations')
+            return
     elif selected.get() == 3 or selected.get() == 4:
         try:
             initial = float(oneEntry.get())
         except:
             messagebox.showwarning('Error', 'Error happened in the initial value, please enter again')
             return
-        if selected.get() == 3:
-            ans = (FixedPoint.find_root_fixedPoint(function_string=fun, x=initial))
-        elif selected.get() == 4:
-            ans = (NewtonRaphson.find_root_newtonRaphson(function_string=fun, x=initial))
-
+        try:
+            if selected.get() == 3:
+                ans = (FixedPoint.find_root_fixedPoint(function_string=fun, x=initial))
+            elif selected.get() == 4:
+                ans = (NewtonRaphson.find_root_newtonRaphson(function_string=fun, x=initial))
+        except:
+            messagebox.showwarning('Error', 'Error in calculations')
+            return
     else:
         return
     root.insert(INSERT, ans)
