@@ -1,12 +1,8 @@
 from cmath import sin, cos, tan, exp
 
 from mpmath import ln
-<<<<<<< HEAD:Bracketing/eval_success.py
-import Bracketing.parsing as parse
-=======
 
 import RootFinder.Utils.parsing as Parsing
->>>>>>> 69ac08e3d3f19870de81a16ffadb4779134786ed:RootFinder/Utils/eval_success.py
 
 
 def is_num(num):
@@ -172,4 +168,4 @@ def eval_success(function_string, value):
 # print(eval_success("x*-3*-+-+--10", 7))
 # print(eval_success("x+-x+-x+-x*p", 7))
 # print(eval_success("x+-x+-x+-x*x", 7))
-print(eval_success("2tan(2x)/", 7))
+print(eval_success("2tan(2x)", 7))

@@ -5,7 +5,7 @@ from RootFinder.Utils import constants
 digits = constants.DIGITS;
 
 
-def find_root_newtonRaphson(function_string, x = 0):
+def find_root_newtonRaphson(function_string, x=0):
     """
     :param function_string: the equation which we want to get the root
     :param x: the initial guess of the root
@@ -28,3 +28,6 @@ def find_root_newtonRaphson(function_string, x = 0):
     else:
         return x
 
+
+pp = find_root_newtonRaphson("exp(x) - 4 ", 2)
+print(pp)
