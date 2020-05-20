@@ -5,8 +5,10 @@ from tkinter import scrolledtext
 
 def printOurFile():
     try:
-        f = open("report.txt", "r")
-        content = f.read()
+        with open("report.txt" , 'r') as file:
+            content = file.read()
+        # f = open("report.txt", "r")
+        # content = f.read()
     except:
         messagebox.showwarning('Error', 'Error while opening the file')
         return

@@ -1,21 +1,24 @@
 from RootFinder.Utils.Function import Function as Func
 
 from RootFinder.Utils import constants
+from RootFinder.Utils.Formatter import Formatter as Formatter
 
-digits = constants.DIGITS;
 
-
-def find_root_newtonRaphson(function_string, x = 0):
+def find_root_newtonRaphson(function_string, x):
     """
     :param function_string: the equation which we want to get the root
     :param x: the initial guess of the root
     :return: the root of the equation and NONE if the equation diverged or the number of iterations is above MAX_ITERATIONS
     """
+    formatter = Formatter()
+    formatter.add_entry("Xi", "f(Xi)", "F'(Xi)", "Xi+1")
     fun = Func(function_string)
     found = False
     for i in range(0, constants.MAX_ITERATIONS):
-        fx = round(fun.get_value_at(x), digits)
-        gx = round(fun.get_derivative_value_at(x), digits)  # gx is d/dx (fx)
+        fx = (fun.get_value_at(x))
+        gx = (fun.get_derivative_value_at(x))  # gx is d/dx (fx)
+        formatter.add_entry(x , fx , gx , x-fx/gx)
+        # print(x , fx , gx , x-x-fx/gx,sep = "<><><><><>")
         r = (fx / gx)
         if abs(r) < constants.EPS:
             found = True
@@ -26,7 +29,8 @@ def find_root_newtonRaphson(function_string, x = 0):
         print("The method diverged .Sorry but we can not solve this equation using newton ")
         return None
     else:
+        formatter.display_steps()
         return x
 
 
-#print(find_root_newtonRaphson("2*x - 1 " , 0.25))
+# print(find_root_newtonRaphson("x**2 - 4" , 0.25))

@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends._backend_tk import NavigationToolbar2Tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
-
 from RootFinder.Utils.Function import Function as Func
+from RootFinder.Utils.constants import  PLOT_POINTS
 
 
 def draw_from_lists(xs, ys):
@@ -31,7 +31,7 @@ def draw_from_lists(xs, ys):
 
 
 def draw(function_string, left, right):
-    seg = (right - left) / 50
+    seg = (right - left) / PLOT_POINTS
     fun = Func(function_string)
     xs = list()
     ys = list()
