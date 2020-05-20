@@ -4,7 +4,8 @@ from RootFinder.Utils import constants
 
 digits = constants.DIGITS;
 
-def find_root_newtonRaphson(function_string, x):
+
+def find_root_newtonRaphson(function_string, x = 0):
     """
     :param function_string: the equation which we want to get the root
     :param x: the initial guess of the root
@@ -12,16 +13,16 @@ def find_root_newtonRaphson(function_string, x):
     """
     fun = Func(function_string)
     found = False
-    for i in range(0, 50):
+    for i in range(0, constants.MAX_ITERATIONS):
         fx = round(fun.get_value_at(x), digits)
         gx = round(fun.get_derivative_value_at(x), digits)  # gx is d/dx (fx)
         r = (fx / gx)
         if abs(r) < constants.EPS:
             found = True
             break
-        x = round(x - r)
+        x = x - r
 
-    if found == False:
+    if not found:
         print("The method diverged .Sorry but we can not solve this equation using newton ")
         return None
     else:

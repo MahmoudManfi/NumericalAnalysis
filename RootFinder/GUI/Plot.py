@@ -9,26 +9,21 @@ from matplotlib.figure import Figure
 from RootFinder.Utils.Function import Function as Func
 
 
-
 def draw_from_lists(xs, ys):
     """
     :param xs: the list of x's
     :param ys: the list of y's such that for all xi  --> yi = f(xi)
     :return: plotting the function in a new window
     """
-    # print('fewj')
     app = Tk()
-
     figure = Figure(figsize=(5, 5), dpi=100)
-    figure.add_subplot(111).plot(xs,ys)
-
+    figure.add_subplot(111).plot(xs, ys)
     canvas = FigureCanvasTkAgg(figure, master=app)
     canvas.draw()
     canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
     toolbar = NavigationToolbar2Tk(canvas, app)
     toolbar.update()
     canvas.get_tk_widget().pack(side=TOP, fill=BOTH, expand=1)
-
     app.mainloop()
 
     # plt.plot(xs, ys)
@@ -36,24 +31,16 @@ def draw_from_lists(xs, ys):
 
 
 def draw(function_string, left, right):
-    seg = (right - left) / 50000
+    seg = (right - left) / 50
     fun = Func(function_string)
     xs = list()
     ys = list()
-
     while left < right:
         print(left)
         xs.append(left)
         ys.append(fun.get_value_at(left))
         left += seg
-    draw_from_lists(xs , ys)
-
-
-
-
-
-
-
+    draw_from_lists(xs, ys)
 
 #
 # f = "x * x "

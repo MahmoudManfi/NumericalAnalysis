@@ -11,7 +11,7 @@ def find_root_bisection(function_string, l, r):
     if fl * fr > 0:
         print("Sorry but Bisection method can not solve an equation with the given interval")
         return None
-
+    print("eps ",constants.EPS)
     while abs(r - l) > constants.EPS:
         m = l + (r - l) / 2
         fm = round(fun.get_value_at(m), digits)
@@ -23,9 +23,5 @@ def find_root_bisection(function_string, l, r):
     return (r + l) / 2
 
 
-
-
 # find_root_secant("cos(x) + x**2 - x - 4", -1.56,4)
-
-
 # print(find_root_newton("x + 4", -3))
