@@ -13,11 +13,11 @@ def convert_num(term):
 
 
 def is_num(num):
-    if (isinstance(num, complex)):
+    if isinstance(num, complex):
         return True
-    if (isinstance(num, float)):
+    if isinstance(num, float):
         return True
-    if (isinstance(num, int)):
+    if isinstance(num, int):
         return True
     for i in num:
         if i == '.':
@@ -28,9 +28,9 @@ def is_num(num):
 
 
 def get_prant(str, start):
-    term = '(';
+    term = '('
     open = 1
-    start += 1;
+    start += 1
     while open > 0:
         term += str[start]
         if str[start] == '(':
@@ -142,7 +142,6 @@ def get_coefficient(function_string):
     index = 0
     function_string = str(expand(function_string))
     terms = parse(function_string)
-    print(terms)
     size = len(terms)
     ans = []
     large = -1
@@ -163,7 +162,7 @@ def get_coefficient(function_string):
                 coff = -1
             else:
                 num = convert_num(terms[index - 2])
-                if index == 1 or terms[index - 3] == '+':
+                if index == 2 or terms[index - 3] == '+':
                     coff = num
                 else:
                     coff = -1 * num
@@ -207,7 +206,3 @@ def get_coefficient(function_string):
         index += 1
     ans.append(0)
     return ans
-
-
-kk = get_coefficient("-5-.6*x**2+.5")
-print(kk)

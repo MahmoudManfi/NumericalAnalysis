@@ -6,6 +6,7 @@ from RootFinder.Bracketing import Bisection, FalsePosition
 from RootFinder.OpenMethods import FixedPoint, NewtonRaphson, Secant
 from RootFinder.GUI import Plot
 from RootFinder.GUI import ZahRanReportGUI
+from RootFinder.Utils import parsing, horner
 from tkinter import scrolledtext
 from tkinter import filedialog
 
@@ -107,7 +108,7 @@ def run():
         return
 
     if ans is not None:
-        root.insert(INSERT, ans)
+        root.insert(INSERT, str(ans) + "\n")
         ZahRanReportGUI.printOurFile()
 
 
@@ -146,39 +147,51 @@ root.pack(anchor=S)
 
 
 # tab 2
-def randomSolve(fun):
-    print(fun)
-
-
-def solveFile(fileName):
+def polySolver(f):
     try:
-        with open(fileName, 'r') as file:
-            content = file.read().split('\n')
-        # f = open("report.txt", "r")
-        # content = f.read()
+        constants.EPS = float(epsEntryForCustom.get())
+        constants.MAX_ITERATIONS = int(iterationsEntryForCustom.get())
     except:
-        messagebox.showwarning('Error', 'Error while opening the file')
+        messagebox.showwarning('Error', 'Error in eps or iterations values, try again')
         return
-    for i in content:
-        solve(i)
-
-
-def fileDialog():
-    filename = filedialog.askopenfilename(initialdir="/", title="Select A File", filetype=(("text files", "*.txt"),
-                                                                                           ("all files", "*.*")))
-    browser.config(text=filename)
-    if filename is None:
+    try:
+        b = horner.BirgeVieta()
+        roots = b.cal(f, 1)
+    except:
+        messagebox.showwarning('Error', 'This can''t be solved with the given constrains or complex roots')
         return
-    solveFile(filename)
 
+    if len(roots) == 0:
+        messagebox.showwarning('Error', 'complex roots')
+        return
+    root2.delete('1.0', END)
+    for i in roots:
+        root2.insert(INSERT, str(i) + "\n")
+
+
+def randomSolve():
+    try:
+        polySolver(equation_entry.get())
+    except:
+        messagebox.showwarning('Error', 'Error in passing')
+        return
+
+
+Label(customMethodTab, text='**This way only works for polynomials').pack(pady=10, anchor=S)
+Label(customMethodTab, text='Max Iterations :').pack(anchor=S)
+iterationsEntryForCustom = Entry(customMethodTab)
+iterationsEntryForCustom.insert(END, '50')
+iterationsEntryForCustom.pack(anchor=S)
+Label(customMethodTab, text='Eps :').pack(anchor=S)
+epsEntryForCustom = Entry(customMethodTab)
+epsEntryForCustom.insert(END, '0.00001')
+epsEntryForCustom.pack(anchor=S)
 
 Label(customMethodTab, text='Solve the written function :').pack(pady=10, anchor=S)
 solve = Button(customMethodTab, font=large_font, text="Run", command=randomSolve) \
     .pack(anchor=S)
-
-Label(customMethodTab, text='Solve file of functions :').pack(pady=10, anchor=S)
-browser = Button(customMethodTab, text="browse..", command=fileDialog)
-browser.pack(anchor=S)
+root2 = scrolledtext.ScrolledText(customMethodTab, width=30, height=1)
+root2.pack(anchor=S)
 
 
 # tab 3 plot

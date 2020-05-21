@@ -3,7 +3,10 @@ from RootFinder.Utils import parsing
 
 class BirgeVieta:
     def cal(self,fun, initial):
+        print('eps', constants.EPS)
+        print('iter',constants.MAX_ITERATIONS)
         a = parsing.get_coefficient(fun)
+        print(a)
         roots = []
         size = len(a)
         for i in range(size - 1):
@@ -29,7 +32,3 @@ class BirgeVieta:
             b.pop(len(a)-1)
             a = b.copy()
         return roots
-
-
-birge = BirgeVieta()
-print(birge.cal([1,-11,39,-45], 4.9))

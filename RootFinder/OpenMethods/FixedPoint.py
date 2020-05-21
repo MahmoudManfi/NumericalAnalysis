@@ -91,23 +91,19 @@ def find_root_fixedPoint(function_string, x):
 
 
 def get_root(fun, x):
-    print("g(x) = "+fun)
-    #fun = Func(fun)
+    print("g(x) = " + fun)
+    # fun = Func(fun)
     iter = 0
     last_value = inf
 
-    while iter < 50 and abs(x - last_value) > constants.EPS and abs(x) < 100000000000000 :
-        iter+=1
+    while iter < 50 and abs(x - last_value) > constants.EPS and abs(x) < 100000000000000:
+        iter += 1
         last_value = x
-        x = parse_success.eval_success(fun,x)
-        if type(x)!=float and x.imag!=0.0:
+        x = parse_success.eval_success(fun, x)
+        if type(x) != float and x.imag != 0.0:
             return None
     if abs(x - last_value) < constants.EPS:
         print(x)
         return x
     print("sorry we diverge ")
     return None
-
-
-tt = find_root_fixedPoint("2", 0.8)
-print(tt)
