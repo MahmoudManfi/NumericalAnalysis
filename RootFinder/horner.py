@@ -32,4 +32,4 @@ class BirgeVieta:
 
 
 birge = BirgeVieta()
-print(birge.cal([1,-11,39,-45], 4.9))
+print(birge.cal("x**3-11*x**2+39*x-45", 4.9))
