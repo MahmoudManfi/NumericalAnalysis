@@ -1,4 +1,4 @@
-from sympy import simplify, expand
+from sympy import *
 
 
 def convert_num(term):
@@ -136,10 +136,11 @@ def parse(str):
 
 
 def get_coefficient(function_string):
+    for char in function_string:
+        if char in {'s','c','t','e','l'}:
+            raise ("function isn't polynomial ")
     function_string = str(expand(function_string))
-    print(function_string)
     terms = parse(function_string)
-    print(terms)
     index = 0
     size = len(terms)
     ans = []
@@ -191,5 +192,5 @@ def get_coefficient(function_string):
             ans.append(convert_num(terms[size-1]))
     return ans
 
-kk = get_coefficient("x**5-2*x**2")
+kk = get_coefficient("x**5-2*x**2 + 2.12*x**3+-1.7+tan(x)")
 print(kk)

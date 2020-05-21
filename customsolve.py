@@ -7,19 +7,11 @@ from RootFinder.OpenMethods.FixedPoint import find_root_fixedPoint
 from RootFinder.OpenMethods.NewtonRaphson import find_root_newtonRaphson
 from RootFinder.OpenMethods.Secant import find_root_secant
 from RootFinder.OpenMethods.muller import find_root_muller
+from RootFinder.Utils.parsing import convert_num
 
 inf = 1000000
 
 
-def convert_num(term):
-    is_float = False
-    for i in term:
-        if i == '.':
-            is_float = True
-            break
-    if is_float:
-        return float(term)
-    return int(term)
 
 
 def is_poly(terms):
@@ -259,17 +251,17 @@ def get_one_root(functional_string):
     # return try_muller(functional_string)
 
 
-def divide_root(functional_string, root):
-    terms = parsing.parse(functional_string)
-    if type(root)==complex :
-        if root.imag<eps:
-           root=root.real
-        else:
-
-    coefficient = get_coefficient(terms)
-    powers = get_powers(terms)
-
-    pass
+# def divide_root(functional_string, root):
+#     terms = parsing.parse(functional_string)
+#     if type(root)==complex :
+#         if root.imag<eps:
+#            root=root.real
+#         else:
+#
+#     coefficient = get_coefficient(terms)
+#     powers = get_powers(terms)
+#
+#     pass
 
 
 def solve_poly(functional_string):
@@ -277,8 +269,8 @@ def solve_poly(functional_string):
         return []
 
     root = get_one_root(functional_string)
-    if root is not None:
-        return merge(solve_poly(divide_root(functional_string, root)), root)
+    # if root is not None:
+    #     return merge(solve_poly(divide_root(functional_string, root)), root)
 
 
 def get_poly_terms(function_string):
