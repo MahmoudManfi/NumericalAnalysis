@@ -137,19 +137,30 @@ def parse(str):
 
 def get_coefficient(function_string):
     for char in function_string:
-        if char in {'s','c','t','e','l'}:
+        if char in {'s', 'c', 't', 'e', 'l'}:
             raise ("function isn't polynomial ")
+    index = 0
     function_string = str(expand(function_string))
     terms = parse(function_string)
-    index = 0
+    print(terms)
     size = len(terms)
     ans = []
     large = -1
     next_power = -1
+
+    while index < size:
+        if terms[index] == '**':
+            if terms[index + 1] == '-':
+                raise Exception('power is negative')
+        index += 1
+    index = 0
+
     while index < size:
         if terms[index] == 'x':
             if index == 0 or terms[index - 1] == '+':
                 coff = 1
+            elif terms[index - 1] == '-':
+                coff = -1
             else:
                 num = convert_num(terms[index - 2])
                 if index == 1 or terms[index - 3] == '+':
@@ -158,18 +169,18 @@ def get_coefficient(function_string):
                     coff = -1 * num
 
             if large == -1:
-                if terms[index + 1] == '**':
+                if index < size - 1 and terms[index + 1] == '**':
                     large = convert_num(terms[index + 2])
                 else:
                     large = 1
                 next_power = large - 1
 
             else:
-                if terms[index + 1] != '**':
+                if index == size - 1 or terms[index + 1] != '**':
                     next = 1
                 else:
                     next = convert_num(terms[index + 2])
-                temp_next=next
+                temp_next = next
                 while next != next_power:
                     ans.append(0)
                     next += 1
@@ -179,18 +190,24 @@ def get_coefficient(function_string):
 
         index += 1
 
-    while next_power!=0:
-        ans.append(0)
-        next_power-=1
-    if size<2:
-        ans.append(convert_num(terms[size-1]))
-    else:
-        if terms[size-2]=='**':
+    if next_power != -1:
+        while next_power != 0:
             ans.append(0)
-        else:
-            print(terms[size-1])
-            ans.append(convert_num(terms[size-1]))
+            next_power -= 1
+
+    index = 0
+    while index < size:
+        if is_num(terms[index]) and (index == size - 1 or terms[index + 1] in {'+', '-'}):
+            if index == 0 or terms[index - 1] == '+':
+                ans.append(convert_num(terms[index]))
+                return ans
+            if terms[index - 1] == '-':
+                ans.append(-1 * convert_num(terms[index]))
+                return ans
+        index += 1
+    ans.append(0)
     return ans
 
-kk = get_coefficient("x**5-2*x**2 + 2.12*x**3+-1.7+tan(x)")
+
+kk = get_coefficient("-5-.6*x**2+.5")
 print(kk)

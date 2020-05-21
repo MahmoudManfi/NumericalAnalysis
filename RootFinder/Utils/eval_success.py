@@ -169,4 +169,4 @@ def eval_success(function_string, value):
 # print(eval_success("x*-3*-+-+--10", 7))
 # print(eval_success("x+-x+-x+-x*p", 7))
 # print(eval_success("x+-x+-x+-x*x", 7))
-print(eval_success("2..55x*5", 7))
+print(eval_success("x/2+x*7/2.5/x", 7))

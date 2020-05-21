@@ -26,7 +26,7 @@ def find_root_bisection(function_string, l, r):
             r = m
     if abs(r - l) > constants.EPS:
         print("Bisection method has iterated more than the maximum number of iterations ")
-    #formatter.display_steps()
+    formatter.display_steps()
     return (r + l) / 2
 
 
