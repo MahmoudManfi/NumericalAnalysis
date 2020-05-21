@@ -40,7 +40,7 @@ def find_root_secant(function_string, x_prev=0, x_cur=1):
     if found == false:
         print("The method diverged , Try using another initial or make sure the function has a root and is continuous")
         return None
-    formatter.display_steps()
+#    formatter.display_steps()
     return x_cur
 
 #find_root_secant("exp(-x) - x " , 0 , 1 )

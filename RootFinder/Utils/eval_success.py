@@ -5,17 +5,6 @@ from mpmath import ln
 import RootFinder.Utils.parsing as Parsing
 
 
-def is_num(num):
-    if isinstance(num, complex):
-        return True
-    if isinstance(num, float):
-        return True
-    if isinstance(num, int):
-        return True
-    for i in num:
-        if i < '0' or i > '9':
-            return False
-    return True
 
 
 def eval_triangle(term, value):
@@ -75,6 +64,16 @@ def eval_sub(left, right):
     return left - right
 
 
+def is_float(term):
+    if type(term)!=str:
+        return False
+    for i in term:
+        if i=='.':
+            return True
+    return False
+    pass
+
+
 def eval_success(function_string, value):
     terms = Parsing.parse(function_string)
     if len(terms) == 1 and terms[0] == 'x':
@@ -100,6 +99,8 @@ def eval_success(function_string, value):
         term = terms[index]
         if term == 'x':
             terms[index] = value
+        if is_float(term):
+            terms[index]=float(term)
         elif hasattr(term, 'isdigit') and term.isdigit():
             terms[index] = float(term)
             if terms[index].is_integer():
@@ -149,7 +150,7 @@ def eval_success(function_string, value):
             size = len(terms)
 
         elif term == '-':
-            if index == 0 or not is_num(terms[index - 1]):
+            if index == 0 or not Parsing.is_num(terms[index - 1]):
                 terms[index:index + 2] = [eval_sub(0, terms[index + 1])]
             else:
                 terms[index - 1:index + 2] = [eval_sub(terms[index - 1], terms[index + 1])]
@@ -168,4 +169,4 @@ def eval_success(function_string, value):
 # print(eval_success("x*-3*-+-+--10", 7))
 # print(eval_success("x+-x+-x+-x*p", 7))
 # print(eval_success("x+-x+-x+-x*x", 7))
-print(eval_success("2tan(2x)", 7))
+print(eval_success("2..55x*5", 7))

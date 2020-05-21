@@ -29,10 +29,7 @@ def find_root_newtonRaphson(function_string, x):
         print("The method diverged .Sorry but we can not solve this equation using newton ")
         return None
     else:
-        formatter.display_steps()
+#        formatter.display_steps()
         return x
 
-
-pp = find_root_newtonRaphson("exp(x) - 4 ", 2)
-print(pp)
 # print(find_root_newtonRaphson("x**2 - 4" , 0.25))

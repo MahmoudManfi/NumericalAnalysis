@@ -6,7 +6,9 @@ def is_num(num):
     if (isinstance(num, int)):
         return True
     for i in num:
-        if i < '0' or i > '9':
+        if i=='.':
+            continue
+        if i < '0' or i > '9' :
             return False
     return True
 

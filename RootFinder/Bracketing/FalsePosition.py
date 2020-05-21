@@ -43,7 +43,7 @@ def find_root_falsePosition(function_string , xl, xu):
 
         if (i > 0) and (abs(xrnew - xrold) < eps):
             print('False Position method has converged ')
-            formatter.display_steps()
+           # formatter.display_steps()
             return xrnew
 
         xrold = xrnew

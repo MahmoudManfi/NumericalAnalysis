@@ -4,11 +4,11 @@ from RootFinder.Bracketing.FalsePosition import eps
 from RootFinder.Utils.eval_success import eval_success
 
 
-def find_root_muller(function_string):
+def find_root_muller(function_string,a,b,c):
 
-    xnm2 = 2
-    xnm1 = 5
-    xn = 10
+    xnm2 = a
+    xnm1 = b
+    xn = c
     while abs(eval_success(function_string,xn)) >eps :
         f_xn=eval_success(function_string,xn)
         f_xnm1=eval_success(function_string,xnm1)

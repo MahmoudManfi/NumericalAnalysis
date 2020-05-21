@@ -171,7 +171,7 @@ def try_secent(functional_string, all=False):
     return roots
 
 
-def try_newton(functional_string):
+def try_newton(functional_string,all=False):
     roots = []
     for i in range(100):
         t = -1 * inf + (random() * (2 * inf))
@@ -182,20 +182,21 @@ def try_newton(functional_string):
             else:
                 return root
     for i in range(1, 100):
-        t = i
-        root = find_root_newtonRaphson(functional_string, t)
-        if root is not None:
-            if all:
-                roots.append(root)
-            else:
-                return root
-        t = -1 * i
-        root = find_root_newtonRaphson(functional_string, t)
-        if root is not None:
-            if all:
-                roots.append(root)
-            else:
-                return root
+        try:
+            root = find_root_newtonRaphson(functional_string, i)
+            if root is not None:
+                if all:
+                    roots.append(root)
+                else:
+                    return root
+            root = find_root_newtonRaphson(functional_string, i)
+            if root is not None:
+                if all:
+                    roots.append(root)
+                else:
+                    return root
+        except:
+            continue
 
     if not all:
         return None
@@ -208,10 +209,13 @@ def try_muller(functional_string, all=False):
         a = -1 * inf + (random() * (2 * inf))
         b = -1 * inf + (random() * (2 * inf))
         c = -1 * inf + (random() * (2 * inf))
-        root = find_root_muller(functional_string, a, b, c)
-        if not all:
-            return root
-        roots.append(root)
+        try:
+            root = find_root_muller(functional_string, a, b, c)
+            if not all:
+                return root
+            roots.append(root)
+        except:
+             continue;
     return roots
 
 
@@ -228,7 +232,7 @@ def merge(ans, root):
         return ans
 
 
-def get_one_root(functional_string, guess=None):
+def get_one_root(functional_string):
     if functional_string == "":
         return None
 
@@ -252,11 +256,16 @@ def get_one_root(functional_string, guess=None):
     if root is not None:
         return root
 
-    return try_muller(functional_string)
+    # return try_muller(functional_string)
 
 
 def divide_root(functional_string, root):
     terms = parsing.parse(functional_string)
+    if type(root)==complex :
+        if root.imag<eps:
+           root=root.real
+        else:
+
     coefficient = get_coefficient(terms)
     powers = get_powers(terms)
 
@@ -346,3 +355,5 @@ def solve(function_string):
     initial_guess = solve_poly(get_poly_terms(function_string))
     return solve_non_poly(initial_guess)
 
+p=get_one_root("x**2+x*2-100")
+print(p)
