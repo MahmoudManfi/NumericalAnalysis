@@ -5,12 +5,14 @@ class BirgeVieta:
     def cal(self,fun, initial):
         a = parsing.get_coefficient(fun)
         roots = []
+        b = []
+        c = []
         size = len(a)
         for i in range(size - 1):
-            b = []
-            c = []
             guess = initial
             for j in range(constants.MAX_ITERATIONS):
+                b.clear()
+                c.clear()
                 b.append(a[0])
                 c.append(a[0])
                 for k in range(len(a) - 1):
@@ -20,8 +22,6 @@ class BirgeVieta:
                 if abs(b[len(a)-1]) < constants.EPS:
                     break
                 guess = guess - b[len(a) - 1] / c[len(a) - 2]
-                b.clear()
-                c.clear()
             if abs(b[len(a) - 1]) < constants.EPS:
                 roots.append(guess)
             else:
@@ -32,4 +32,4 @@ class BirgeVieta:
 
 
 birge = BirgeVieta()
-print(birge.cal("x**3-11*x**2+39*x-45", 4.9))
+print(birge.cal("x**3-1", 4.9))
