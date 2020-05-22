@@ -39,7 +39,7 @@ class queries():
 
     def calculate(self):
         try:
-            self.ans_label.configure(text= self.func.get_value_at(int(self.entry.get())),fg = 'orange')
+            self.ans_label.configure(text= self.func.get_value_at(float(self.entry.get())),fg = 'orange')
         except:
             self.ans_label.configure(text='check you Entered valid value!',fg = 'red')
 

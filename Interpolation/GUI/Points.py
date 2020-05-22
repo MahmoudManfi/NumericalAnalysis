@@ -107,9 +107,11 @@ class Point():
         else:
             n = interpolation.Lagrange()
         b = n.cal(self.Xvalues, self.Yvalues)
-        excution_time_begin = datetime.now()
+        excution_time_begin = datetime.now().timestamp()
         self.eqn = n.get_equ(self.Xvalues, b)
-        excution_time = datetime.now() - excution_time_begin
+        # time = datetime.now().timestamp() - excution_time_begin
+        # file.write("Execution time of the algorithm is " + "{:0.5f}".format(time) + " seconds " + "\n")
+        excution_time = datetime.now().timestamp() - excution_time_begin
         queries_GUI = Tk()
         queries_GUI.configure(bg='blue')
         self.Xvalues.sort()
