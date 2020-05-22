@@ -8,7 +8,8 @@ class Function:
         """the function is assumed to be a function of x """
 
         transformation = standard_transformations + (implicit_application,)
-        self.f = parse_expr(function, transformations=transformation)
+        print(function.replace('-0.0','0'))
+        self.f = parse_expr(function.replace('-0.0','0'), transformations=transformation)
         print(self.f)
         self.__x = symbols('x')
 

@@ -83,10 +83,9 @@ class Point():
         # self.parent.withdraw()
         condition = True
         while condition:
-            file_path = filedialog.askopenfilename()
-            condition = not file_path.__contains__('.txt')
+            file = filedialog.askopenfile('r',filetypes=[('text Files', '*.txt')])
+            condition = not file
 
-        file = open(file_path, "r")
         for x in file:
             value = x.split(' ',1)
             try:
@@ -94,6 +93,7 @@ class Point():
                 self.Yvalues.append(float(value[1]))
             except:
                 self.warn_error()
+        file.close()
         self.solve()
 
 
@@ -106,8 +106,8 @@ class Point():
             n = interpolation.Newton()
         else:
             n = interpolation.Lagrange()
-        b = n.cal(self.Xvalues, self.Yvalues)
         excution_time_begin = datetime.now().timestamp()
+        b = n.cal(self.Xvalues, self.Yvalues)
         self.eqn = n.get_equ(self.Xvalues, b)
         # time = datetime.now().timestamp() - excution_time_begin
         # file.write("Execution time of the algorithm is " + "{:0.5f}".format(time) + " seconds " + "\n")

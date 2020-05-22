@@ -10,7 +10,7 @@ def check(x, fx, n):
     if size_x != size_fx or size_x < 2 or n > size_x-1:
         return False
     for i in range(size_x-1):
-        if x[i] == x[i+1] or fx[i] == fx[i+1]:
+        if x[i] == x[i+1] : # or fx[i] == fx[i+1]:
             return False
     for i in range(size_x):
         index = matrix[0].index(x[i],0,size_x)
