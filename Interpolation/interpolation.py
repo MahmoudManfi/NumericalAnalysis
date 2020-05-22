@@ -22,7 +22,7 @@ def build_parentheses(x):
     container = []
     for i in range(len(x)):
         if x[i] == 0:
-            container.append('x')
+            container.append('*x')
         else:
             container.append('*(x - ' + str(x[i]) + ')')
     return container
@@ -69,7 +69,9 @@ class Newton:
         size = len(x)
         container = build_parentheses(x)
         for i in range(size):
-            if i == 0:
+            if b[i] == 0:
+                continue
+            if len(res) == 0:
                 res += str(b[i])
             else:
                 res += sign_string(b[i])
@@ -106,7 +108,9 @@ class Lagrange:
         size = len(x)
         res = ''
         for i in range(size):
-            if i == 0:
+            if b[i] == 0:
+                continue
+            if len(res) == 0:
                 res += str(b[i])
             else:
                 res += sign_string(b[i])
@@ -123,6 +127,7 @@ class Lagrange:
 # newton = Newton()
 # b = newton.cal(x, fx)
 # eqn = newton.get_equ(x,b)
+# print(eqn)
 # eqn = eqn.replace('*','')
 # # f = Function(eqn)
 # print(eqn)
