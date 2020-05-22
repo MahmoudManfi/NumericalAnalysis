@@ -5,7 +5,7 @@ from RootFinder.Utils import constants
 from RootFinder.Bracketing import Bisection, FalsePosition
 from RootFinder.OpenMethods import FixedPoint, NewtonRaphson, Secant
 from RootFinder.GUI import Plot
-from RootFinder.GUI import ZahRanReportGUI
+from RootFinder.GUI import ReportGUI
 from RootFinder.Utils import parsing, horner
 from tkinter import scrolledtext
 from tkinter import filedialog
@@ -109,7 +109,7 @@ def run():
 
     if ans is not None:
         root.insert(INSERT, str(ans) + "\n")
-        ZahRanReportGUI.printOurFile()
+        ReportGUI.printOurFile()
 
 
 bisection = Radiobutton(chooseMethodTab, text='Bisection', value=1, variable=selected, command=clicked). \

@@ -58,14 +58,14 @@ class Point():
     def sumbit(self):
         for entry in self.Xentries:
             try:
-                self.Xvalues.append(int(entry.get()))
+                self.Xvalues.append(float(entry.get()))
             except:
                 self.warn_error()
                 return
 
         for entry in self.Yentries:
             try:
-                self.Yvalues.append(int(entry.get()))
+                self.Yvalues.append(float(entry.get()))
             except:
                 self.warn_error()
                 return
@@ -90,16 +90,16 @@ class Point():
         for x in file:
             value = x.split(' ',1)
             try:
-                self.Xvalues.append(int(value[0]))
-                self.Yvalues.append(int(value[1]))
+                self.Xvalues.append(float(value[0]))
+                self.Yvalues.append(float(value[1]))
             except:
-                  self.warn_error()
+                  return # self.warn_error()
         self.solve()
 
 
     def solve(self):
         if not interpolation.check(self.Xvalues, self.Yvalues, self.order):
-            self.warn_error()
+            # self.warn_error()
             return
         self.parent.destroy()
         if self.var == 1:
@@ -108,11 +108,8 @@ class Point():
             n = interpolation.Lagrange()
         b = n.cal(self.Xvalues, self.Yvalues)
         excution_time_begin = datetime.now()
-        # print(excution_time_begin)
         self.eqn = n.get_equ(self.Xvalues, b)
-        # print(datetime.now())
         excution_time = datetime.now() - excution_time_begin
-        # print(excution_time,type(excution_time))
         queries_GUI = Tk()
         queries_GUI.configure(bg='blue')
         queries(queries_GUI,self.eqn,excution_time)
