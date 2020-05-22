@@ -93,13 +93,13 @@ class Point():
                 self.Xvalues.append(float(value[0]))
                 self.Yvalues.append(float(value[1]))
             except:
-                  return # self.warn_error()
+                self.warn_error()
         self.solve()
 
 
     def solve(self):
         if not interpolation.check(self.Xvalues, self.Yvalues, self.order):
-            # self.warn_error()
+            self.warn_error()
             return
         self.parent.destroy()
         if self.var == 1:
@@ -112,7 +112,8 @@ class Point():
         excution_time = datetime.now() - excution_time_begin
         queries_GUI = Tk()
         queries_GUI.configure(bg='blue')
-        queries(queries_GUI,self.eqn,excution_time)
+        self.Xvalues.sort()
+        queries(queries_GUI,self.eqn,excution_time,self.Xvalues[0],self.Xvalues[len(self.Xvalues)-1])
 
         queries_GUI.mainloop()
 
