@@ -3,7 +3,7 @@ from RootFinder.Utils.Function import Function
 from RootFinder.GUI.Plot import draw
 
 class queries():
-    def __init__(self,parent,eqn,excution_time):
+    def __init__(self,parent,eqn,excution_time,left,right):
         self.parent = parent
         self.eqn = eqn
 
@@ -33,13 +33,13 @@ class queries():
 
         self.func = Function(eqn)
         try:
-            draw(eqn)
+            draw(eqn,left,right)
         except:
             print("can't draw!")
 
     def calculate(self):
         try:
-            self.ans_label.configure(text= self.func.get_value_at(int(self.entry.get())),fg = 'orange')
+            self.ans_label.configure(text= self.func.get_value_at(float(self.entry.get())),fg = 'orange')
         except:
             self.ans_label.configure(text='check you Entered valid value!',fg = 'red')
 

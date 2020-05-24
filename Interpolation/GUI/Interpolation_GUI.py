@@ -14,6 +14,7 @@ def sumbit():
     print(order,var)
     Point_GUI = Tk()
     Point_GUI.configure(bg='blue')
+    Point_GUI.geometry('1400x700')
     Point(Point_GUI,order,var)
     window.destroy()
     Point_GUI.mainloop()

@@ -58,14 +58,14 @@ class Point():
     def sumbit(self):
         for entry in self.Xentries:
             try:
-                self.Xvalues.append(int(entry.get()))
+                self.Xvalues.append(float(entry.get()))
             except:
                 self.warn_error()
                 return
 
         for entry in self.Yentries:
             try:
-                self.Yvalues.append(int(entry.get()))
+                self.Yvalues.append(float(entry.get()))
             except:
                 self.warn_error()
                 return
@@ -83,17 +83,17 @@ class Point():
         # self.parent.withdraw()
         condition = True
         while condition:
-            file_path = filedialog.askopenfilename()
-            condition = not file_path.__contains__('.txt')
+            file = filedialog.askopenfile('r',filetypes=[('text Files', '*.txt')])
+            condition = not file
 
-        file = open(file_path, "r")
         for x in file:
             value = x.split(' ',1)
             try:
-                self.Xvalues.append(int(value[0]))
-                self.Yvalues.append(int(value[1]))
+                self.Xvalues.append(float(value[0]))
+                self.Yvalues.append(float(value[1]))
             except:
-                  self.warn_error()
+                self.warn_error()
+        file.close()
         self.solve()
 
 
@@ -106,16 +106,16 @@ class Point():
             n = interpolation.Newton()
         else:
             n = interpolation.Lagrange()
+        excution_time_begin = datetime.now().timestamp()
         b = n.cal(self.Xvalues, self.Yvalues)
-        excution_time_begin = datetime.now()
-        # print(excution_time_begin)
         self.eqn = n.get_equ(self.Xvalues, b)
-        # print(datetime.now())
-        excution_time = datetime.now() - excution_time_begin
-        # print(excution_time,type(excution_time))
+        # time = datetime.now().timestamp() - excution_time_begin
+        # file.write("Execution time of the algorithm is " + "{:0.5f}".format(time) + " seconds " + "\n")
+        excution_time = datetime.now().timestamp() - excution_time_begin
         queries_GUI = Tk()
         queries_GUI.configure(bg='blue')
-        queries(queries_GUI,self.eqn,excution_time)
+        self.Xvalues.sort()
+        queries(queries_GUI,self.eqn,excution_time,self.Xvalues[0],self.Xvalues[len(self.Xvalues)-1])
 
         queries_GUI.mainloop()
 

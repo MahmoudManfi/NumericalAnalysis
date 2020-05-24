@@ -31,5 +31,3 @@ def find_root_newtonRaphson(function_string, x):
     else:
         formatter.display_steps()
         return x
-
-# print(find_root_newtonRaphson("x**2 - 4" , 0.25))
