@@ -3,8 +3,8 @@ from cmath import inf
 import RootFinder.Utils.eval_success as parse_success
 import RootFinder.Utils.constants as constants
 import RootFinder.Utils.parsing as Parsing
+from RootFinder.Utils.Formatter import Formatter as Formatter
 
-eps = constants.EPS
 
 
 def is_num(num):
@@ -101,18 +101,21 @@ def get_root(fun, x):
     # fun = Func(fun)
     iter = 0
     last_value = inf
-
-    while iter < 50 and abs(x - last_value) > constants.EPS and abs(x) < 100000000000000:
+    formatter = Formatter()
+    formatter.add_entry("i","X" )
+    while iter < constants.MAX_ITERATIONS and abs(x - last_value) > constants.EPS and abs(x) < 100000000000000:
         iter += 1
         last_value = x
         x = parse_success.eval_success(fun, x)
+        formatter.add_entry(iter,x)
         if type(x) != float and x.imag != 0.0:
             return None
     if abs(x - last_value) < constants.EPS:
+        formatter.display_steps()
         print(x)
         return x
     print("sorry we diverge ")
     return None
 
 
-find_root_fixedPoint("7*x**3+x**2+10*x+13",-0.88)
+# find_root_fixedPoint("x**2-2 ",0)
