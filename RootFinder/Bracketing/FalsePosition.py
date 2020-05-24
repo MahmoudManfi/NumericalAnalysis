@@ -34,7 +34,7 @@ def find_root_falsePosition(function_string , xl, xu):
             print('exact root is found using false position ')
             formatter.display_steps()
             return xrnew
-        elif fr < 0 and fl < 0 :
+        elif fr * fl >  0 :
             xl = xrnew
             fl = fr
         else:
@@ -52,5 +52,5 @@ def find_root_falsePosition(function_string , xl, xu):
     return None
 
 
-#print(find_root_falsePosition("2*x**3 - 1" , -1 , 3))
+#print(find_root_falsePosition("2*x**3 - 1" , -1 , 2))
 # get_root_false_position()
