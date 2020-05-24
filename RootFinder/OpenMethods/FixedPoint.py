@@ -115,4 +115,4 @@ def get_root(fun, x):
     return None
 
 
-find_root_fixedPoint("x**2+10*x+13-7*x**3",-0.88)
+find_root_fixedPoint("7*x**3+x**2+10*x+13",-0.88)
