@@ -163,7 +163,7 @@ def get_coefficient(function_string):
                 coff = -1
             else:
                 num = convert_num(terms[index - 2])
-                if index == 1 or terms[index - 3] == '+':
+                if index == 2 or terms[index - 3] == '+':
                     coff = num
                 else:
                     coff = -1 * num
@@ -209,5 +209,5 @@ def get_coefficient(function_string):
     return ans
 
 
-kk = get_coefficient("-5-.6*x**2+.5")
+kk = get_coefficient("-2*x**2")
 print(kk)
