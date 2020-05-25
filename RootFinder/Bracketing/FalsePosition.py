@@ -13,16 +13,14 @@ def find_root_falsePosition(function_string , xl, xu):
     :param xu: the upperbound x
     :return: the root of the equation or None if the method diverged
     '''
-    # *any assumptions should be stated cleary in comments before the function
-    # * In case the you could not find the root (the method diverged , we iterated more that max_iterations, you can simply print in
-    #  the console we did not find the root and return None (DON'T THROW ANY EXCEPTION )
     formatter = Formatter()
     formatter.add_entry("Xl", "Xu", "F(Xl)", "F(Xu)", "Xr","F(Xr)")
     func = Func(function_string)
     fl = func.get_value_at((xl))
     fu = func.get_value_at((xu))
 
-    if ((fl < 0 and fu<0) or ((fu > 0) and (fl> 0))):
+    # if ((fl < 0 and fu<0) or ((fu > 0) and (fl> 0))):
+    if fl * fu > 0:
         print("Sorry but False_position method can not solve an equation with the given interval")
         return None
 
