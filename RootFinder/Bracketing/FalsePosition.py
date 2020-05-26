@@ -19,8 +19,7 @@ def find_root_falsePosition(function_string , xl, xu):
     fl = func.get_value_at((xl))
     fu = func.get_value_at((xu))
 
-    # if ((fl < 0 and fu<0) or ((fu > 0) and (fl> 0))):
-    if fl * fu > 0:
+    if ((fl < 0 and fu<0) or ((fu > 0) and (fl> 0))):
         print("Sorry but False_position method can not solve an equation with the given interval")
         return None
 
