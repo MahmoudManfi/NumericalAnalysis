@@ -11,15 +11,17 @@ Also, There's a general algorithm that takes as an input the equation to solve a
 outputs its roots.
 
 The aim of this part is to compare and analyze the behavior of the different numerical methods
-: Bisection, False-position, Fixed point, Newton-Raphson and Secant.
+: Bisection, False-position, Fixed point, Newton-Raphson and Secant.  
 
+**More description in Interpolation Report pdf.**
 
 ## Part-2:
 
 A program for querying the values of specific points using
 interpolation which takes as an input the polynomial order, sample point(s), corresponding value(s),
-the interpolation technique to use (Newton – Lagrange) and the query point(s).
+the interpolation technique to use (Newton – Lagrange) and the query point(s).  
 
+**More description in Root Finder Report pdf.**
 
 ## Credits
 * ![Islam Yousry](https://github.com/islam-yousry)
